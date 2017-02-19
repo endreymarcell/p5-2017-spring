@@ -1,3 +1,4 @@
 # Negyedik óra: egér és billentyűzet
 
-TBD
+mouseClicked()  
+keyPressed()
