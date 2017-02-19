@@ -2,16 +2,16 @@
 
 ## setup és draw
 
-print("hali")  
-print(counter)
+`print("hali")`  
+`print(counter)`  
 
 ## sprite interakciók
 
-positon.x = mouseX
-overlap()  
-collide()  
-displace()  
-bounce()  
-mass  
-immovable  
-restitution  
+`positon.x = mouseX`  
+`overlap()`  
+`collide()`  
+`displace()`  
+`bounce()`  
+`mass`  
+`immovable`  
+`restitution`  

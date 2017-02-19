@@ -2,22 +2,22 @@
 
 ## Vászon és rajz
 
-createCanvas()  
-background()  
-point()  
-circle()  
-square()  
-line()  
-fill()  
-noFill()  
-stroke()  
-noStroke()  
-strokeWeight()  
-text()  
+`createCanvas()`  
+`background()`  
+`point()`  
+`circle()`  
+`square()`  
+`line()`  
+`fill()`  
+`noFill()`  
+`stroke()`  
+`noStroke()`  
+`strokeWeight()`  
+`text()`  
 
 ## Képek
 
-preload()  
-loadimage()  
-image()  
+`preload()`  
+`loadimage()`  
+`image()`  
 

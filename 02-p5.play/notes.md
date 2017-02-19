@@ -11,10 +11,10 @@ Segédszkeccs: TBD
 Játszótér: TBD  
 
 `createSprite()`  
-setSpeed(), friction  
-rotation, rotationSpeed  
-addSpeed(), limitSpeed()  
-position.x és y  
-createSprite(x, y)  
-createSprite(x, y, w, h)  
+`setSpeed()`, `friction`  
+`rotation`, `rotationSpeed`  
+`addSpeed()`, `limitSpeed()`  
+`position.x` és `y`  
+`createSprite(x, y)`  
+`createSprite(x, y, w, h)`  
 
