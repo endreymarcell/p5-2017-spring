@@ -1,4 +1,4 @@
-# Ötödik óra: rajzolás
+# Negyedik óra: rajzolás
 
 ## Vászon és rajz
 
