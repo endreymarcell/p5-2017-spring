@@ -25,7 +25,7 @@ Játszótér: TBD
 `company = "Carlos Cafe"`  
 
 #### 3. Változó mint függvényargumentum
-(Avagy: a függvény megeszi a változót)
+(Avagy: a függvény megeszi a változót)  
 `alert(company)`  
 `nyan(stars)`  
 `balls("coral", customers)`  
@@ -42,7 +42,7 @@ Játszótér: TBD
 `bob.wheels`  
 
 #### 6. Változó mint függvényargumentum: objektumok
-(Avagy: az objektum függvénye is ehet változót, és az objektum változóját is meg lehet enni)
+(Avagy: az objektum függvénye is ehet változót, és az objektum változóját is meg lehet enni)  
 `alert(bob.color)`  
 `nyan(bob.wheels)`  
 `bob.blink(stars)`  
