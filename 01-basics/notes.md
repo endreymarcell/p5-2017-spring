@@ -1,6 +1,6 @@
 # Első óra: a programozás alapfogalmai
 
-Játszótér: TBD
+Játszótér: http://jsbin.com/zobexeb/edit?console,output
 
 ## Függvények, változók, objektumok 9 lépésben
 
