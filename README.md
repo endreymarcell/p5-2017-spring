@@ -12,6 +12,8 @@ A szemeszter utolsó előtti óráján mindenkinek írnia kell egy képernyőkí
 
 A programokat a [jsbin.com](http://jsbin.com/) weboldalon írjuk. Ajánlott beállítások: [Editor settings](etc/jsbin-editor-settings.png), [Preferences](etc/jsbin-preferences.png). Az órai munka az internetre mentődik, így bárhonnan elérhető, bármikor folytatható, bárkivel megosztható. Ehhez a weboldalon regisztráció szükséges.  
 
+Facebook-csoport: https://www.facebook.com/groups/390774644620693/  
+
 ## Speciális karakterek
 
 | Karakter | kód             | Karakter | kód             |
