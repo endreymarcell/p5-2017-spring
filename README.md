@@ -10,7 +10,7 @@ A kurzus oktatói: Endrey Marcell, Biró Júlia és Kovács Eszter.
 
 A szemeszter utolsó előtti óráján mindenkinek írnia kell egy képernyőkímélőt, az utolsón pedig egy játékot. A félév végi jegy ezeknek a programoknak, illetve a félév végi munkának (órai munka és esetleges házi feladatok) az értékeléséből születik. 
 
-A programokat a [jsbin.com](http://jsbin.com/) weboldalon írjuk. Az órai munka az internetre mentődik, így bárhonnan elérhető, bármikor folytatható, bárkivel megosztható. Ehhez a weboldalon regisztráció szükséges.  
+A programokat a [jsbin.com](http://jsbin.com/) weboldalon írjuk. Ajánlott beállítások: [Editor settings](etc/jsbin-editor-settings.png), [Preferences](etc/jsbin-preferences.png). Az órai munka az internetre mentődik, így bárhonnan elérhető, bármikor folytatható, bárkivel megosztható. Ehhez a weboldalon regisztráció szükséges.  
 
 ## Speciális karakterek
 
