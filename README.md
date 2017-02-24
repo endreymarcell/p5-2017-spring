@@ -22,5 +22,5 @@ Facebook-csoport: https://www.facebook.com/groups/390774644620693/
 | {        | alt + 7         | }        | alt + ö         |
 | <        | alt + shift + y | >        | alt + shift + x |
 | &        | alt + 1         | \|       | alt + í         |
-| *        | alt + shift + , | @        | alt + q         |
+| *        | alt + shift + , | ;        | alt + .         |
 
