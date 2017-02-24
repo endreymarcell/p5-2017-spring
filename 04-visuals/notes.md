@@ -15,9 +15,16 @@
 `strokeWeight()`  
 `text()`  
 
+## Változó színek
+
+TBD  
+
+## Random színek
+
+TBD  
+
 ## Képek
 
 `preload()`  
 `loadimage()`  
 `image()`  
-
