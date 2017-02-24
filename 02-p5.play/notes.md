@@ -2,13 +2,11 @@
 
 ## Vonalzó, szögmérő
 
-Segédszkeccs: TBD  
-
-(koordinátarendszer és szögek)  
+Segédszkeccs: http://output.jsbin.com/faginuv  
 
 ## Sprite-ok (szereplők)
 
-Játszótér: TBD  
+Játszótér: http://jsbin.com/kadugev/edit?console,output  
 
 `createSprite()`  
 `setSpeed()`, `friction`  
