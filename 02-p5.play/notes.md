@@ -26,6 +26,7 @@ Játszótér: http://jsbin.com/kadugev/edit?console,output
 `bob.setSpeed(1, 0)`
 
 `bob.friction = 0.95`  
+(NB. tizedespont)  
 
 `bob.addSpeed(1, 0)`
 `bob.addSpeed(-1, 0)`
