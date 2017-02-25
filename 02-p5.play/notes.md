@@ -12,7 +12,7 @@ Segédszkeccs: http://output.jsbin.com/faginuv
 
 ### Torpedó
 
-Link: TBD
+Link: http://output.jsbin.com/vimorol  
 
 
 ## Sprite-ok (szereplők)
@@ -56,3 +56,6 @@ Játszótér: http://jsbin.com/kadugev/edit?console,output
 `createSprite(x, y)`  
 `createSprite(x, y, w, h)`  
 
+## Házi feladat
+
+http://output.jsbin.com/qiferir  
