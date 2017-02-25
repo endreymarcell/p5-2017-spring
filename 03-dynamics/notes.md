@@ -1,5 +1,10 @@
 # Harmadik óra: p5 dinamika
 
+## JSBin használat
+Autosave, snapshots.  
+My bins, description, open, archive.  
+Megosztás, klónozás.  
+
 ## setup és draw
 
 `print("hali")`  
