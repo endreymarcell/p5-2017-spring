@@ -4,6 +4,7 @@
 Autosave, snapshots.  
 My bins, description, open, archive.  
 Megosztás, klónozás.  
+Syntax highlight.  
 Cmd (ill. Ctrl) + Shift + L autoformat  
 
 ## setup és draw

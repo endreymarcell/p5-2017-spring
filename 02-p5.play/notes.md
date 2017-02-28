@@ -12,7 +12,7 @@ Segédszkeccs: http://output.jsbin.com/faginuv
 
 ### Torpedó
 
-Link: http://output.jsbin.com/vimorol  
+Link: http://output.jsbin.com/vimorol (órai, rövidített verzió)  
 
 
 ## Sprite-ok (szereplők)
