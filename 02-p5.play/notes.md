@@ -57,6 +57,8 @@ Játszótér: http://jsbin.com/kadugev/edit?console,output
 `createSprite(x, y)`  
 `createSprite(x, y, w, h)`  
 
+`bob.remove()`  
+
 ## Házi feladat
 
 http://output.jsbin.com/qiferir  
