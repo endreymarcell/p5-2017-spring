@@ -33,9 +33,9 @@ Játszótér: http://jsbin.com/kadugev/edit?console,output
 
 ### Rotation
 
-`bob.rotation`
-`bob.rotation = 1`
-`bob.rotation = 10`
+`bob.rotation`  
+`bob.rotation = 1`  
+`bob.rotation = 10`  
 
 `bob.rotationSpeed`  
 `bob.rotationSpeed = 1`  
