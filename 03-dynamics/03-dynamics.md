@@ -133,10 +133,11 @@ Randommal:
 (8) Egészítsd ki úgy az előző programot, hogy legyen egy harmadik sprite is, ez lesz a "cél". A program indulásakor mind a doboz, mind a cél véletlenszerű helyen jelenjen meg. Adj a sprite-jaidnak valamilyen megkülönböztető színt vagy méretet is, hogy tudd, melyik melyik. Ha ez megvan, hozzáadhatsz még egy-két akadályt is: olyan sprite-okat, amik mozdíthatatlanok.  
 (9) Írj egy programot, amiben két sprite van a képernyő két oldalán. A bal oldali sprite jobbra induljon el, de véletlen nagyságú sebességgel, a jobb oldali pedig balra, szintén véletlen tempóban. Állítsd be őket úgy, hogy lepattanjanak egymásról. Ha ez megvan, egészítsd ki a programot úgy, hogy a tömegük is véletlenszerű (értelmes keretek között).  
 
-### csillagos
-`attractionPoint`  
-`rotateToDirection`  
-groups  
+__csillagos__  
+(10\*) A sprite-oknak létezik egy `attractionPoint()` függvénye is, amivel "vonzási pontot" adhatunk a sprite-hoz. A függvény három számot vár: a vonzás erejét, illetve két koordinátát. Ha ezt a parancsot a draw-ban meghívod egy sprite-ra, akkor a megadott erővel elkezd vonzódni a megadott pont felé. Írj egy programot, amiben egy sprite kering a vászon közepe körül! A vászon közepére is tehetsz egy kisebb, mozdulatlan sprite-ot, csak hogy jobban látsszon a pont, ami körül a másik kering. Azt, hogy a sprite rendesen pályára álljon a középpont körül, ne csak oda-vissza lendüljön, úgy érheted el, ha a setup-ban adsz neki egy sebességet, amivel "kilököd" az egyenes pályáról. Például ha a két sprite vízszintesen egy vonalban van, akkor lefelé érdemes meglökni a keringőt.  
+(11\*) Írd át a 10-es feladatot úgy, hogy a kettes számú sprite - és egyben a vonzási pont - ne fixen középen legyen, hanem mindig ott, ahol épp az egér van!  
+(12\*) Írd át a 10-es feladatot úgy, két sprite keringjen, amik lepattannak egymásról!  
+(13\*) Írd át a 10-es feladatot úgy, hogy a keringő sprite `rotateToDirection` változóját `true`-ra állítod!  
 
 ## Referencia
 https://p5js.org/reference/#/p5/  
@@ -145,3 +146,4 @@ http://p5play.molleindustria.org/docs/index.html
 ## TODO érdekes lehet még
 - kommentezés  
 - `allSprites`  
+- groups  
