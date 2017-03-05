@@ -20,4 +20,12 @@
   }
 
   window.print = console.log;
+
+  window.circle = function(x, y, d) {
+    ellipse(x, y, d, d);
+  }
+
+  window.square = function(x, y, a) {
+    rect(x, y, a, a);
+  }
 })();
