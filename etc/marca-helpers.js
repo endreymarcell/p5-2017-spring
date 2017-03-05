@@ -12,11 +12,11 @@
   }
 
   window.loadsound = function(url) {
-      return loadSound(corsProxy + url);
+    return loadSound(corsProxy + url);
   }
 
   window.loadimage = function(url) {
-      return loadImage(corsProxy + url);
+    return loadImage(corsProxy + url);
   }
 
   window.print = console.log;
