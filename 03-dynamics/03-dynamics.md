@@ -92,8 +92,7 @@ még látványosabb: `print(counter)`
 `noLoop()` és `loop()`  
 
 A sprite-ok viszont nem jelennek meg.  
-`bob.draw()` működik, de ha több sprite-om van, kényelmetlen.  
-Helyette: `allSprites.draw()`  
+Úgyhogy: `allSprites.draw()`  
 Továbbá: `background()`  
 
 Ez is kész, megvan a boilerplate. Mentsük el template-ként.  
@@ -111,14 +110,11 @@ Interaktív, egeret követő sprite:
 `positon.x = mouseX`  
 
 ## sprite interakciók
-(Előző, ereget követő sketchepet használva, konzolon bemutatva:)  
 Egy sprite tudja, hogy rálóg-e egy másikra: `overlap()`  
 
 És reagálni is tud a rálógásra:  
 `collide()` ("nekimegy")  
 `displace()` ("eltol")  
-
-Egérrel mozgatás helyett írjuk bele a programba.  
 
 Pattanás:  
 `bounce()`  
