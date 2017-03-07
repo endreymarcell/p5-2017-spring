@@ -1,12 +1,13 @@
 # Harmadik óra: p5 dinamika (VÁZLAT)
 
 ## JSBin használat
+__fájlok__: bin = html + css + js, a konzol és az output nem számít, mert nem mentődik bennük semmi.  
 __autosave__: Nem kell menteni, folyamatosan ment magától. (Viszont lehet snapshotokat menteni.)  
 __név és megnyitás__: A neve a kiejthetőre generált string az url-ban. Beazonosítani a description alapján lehet (File > Add description).  
-Létrehozottakat a My Bins alatt találjuk description szerint Duplakattra megnyílik.  
+Létrehozottakat a My Bins alatt találjuk description szerint. Duplakattra megnyílik.  
 __archiválás__: Szükségtelenné vált bint vagy snapshotot archiválhatjuk.  
 __megosztás__: Megosztás: az URl alapján bárki látja, illetve Share menüpont. Átírni azonban csak a tulaj tudja. (Figyelem: a konzol nem számít átírásnak.) Viszont le lehet klónozni. Amúgy sajátot is.  
-Illetve van még az output megosztása.  
+(Illetve van még az output megosztása.)  
 
 Code editor: nincs szövegformázás, illetve ami van, az syntax highlight.  
 Olyan, mint a konzol, csak okosabb.  
@@ -27,7 +28,6 @@ alert(student)
 
 __csillagos__  
 - Cmd + Ctrl + fel/le nyíl --> sor mozgatása fel/le  
-- Ctrl + Shift + fel/le nyíl --> kurzor többszörözése  
 - Cmd + D --> szó kijelölése, ismétlődően  
 
 ### Játszótér
@@ -48,8 +48,6 @@ function jump() {
 használata:  `jump()`  
 
 note: `{}` "blokk", benne indent  
-
-kikommentelés  
 
 ## setup és draw
 
@@ -72,10 +70,14 @@ Hoppá, rögtön kiment a vászonról. Mekkora a vásznunk? `width` --> 100. Kí
 Ez kész, a setupban gyakorlatilag mindig lesz egy ilyen sor.  
 (Az eddigi programokban is benne volt, mert beleírtam, csak nem mutattam meg.)  
 
-Akkor írjuk bele a setupba, amit már tudunk: `createSprite()`, `width`-`height`-`shapeColor`, `setSpeed()` és `friction`, `rotationSpeed`
+Akkor írjuk bele a setupba, amit már tudunk:  
+`createSprite()`  
+`width`-`height`-`shapeColor`  
+`setSpeed()` és `friction`  
+`rotationSpeed`  
 
 ## Feladatok:  
-(Minden feladat klónozással és descrition-állítással kezdődjön.)  
+(Minden feladat klónozással és description-állítással kezdődjön.)  
 (1) Írj egy programot, amiben három sprite van: az első kb. bal felülről indul és állandó sebességgel jobbra mozog, a második kb. jobb alulról mozog és állandó sebességgel balra halad, a harmadik pedig négyzet helyett hosszúkás, lapos, és csak egyhelyben áll a vászon közepén, vízszintesen.  
 (2) Írj egy programot, amiben három sprite van sorban egymás mellett. Mindháromnak adj színt, balról jobbra egyre világosabbat; mindháromnak adj méretet, balról jobbra egyre kissebbet; és mindhárom forogjon, balról jobbra egyre gyorsabban.  
 
@@ -91,7 +93,7 @@ még látványosabb: `print(counter)`
 
 A sprite-ok viszont nem jelennek meg.  
 `bob.draw()` működik, de ha több sprite-om van, kényelmetlen.  
-Helyette: `drawSprites()`  
+Helyette: `allSprites.draw()`  
 Továbbá: `background()`  
 
 Ez is kész, megvan a boilerplate. Mentsük el template-ként.  
@@ -145,5 +147,4 @@ http://p5play.molleindustria.org/docs/index.html
 
 ## TODO érdekes lehet még
 - kommentezés  
-- `allSprites`  
 - groups  
