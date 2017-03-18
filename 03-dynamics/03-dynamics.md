@@ -123,7 +123,7 @@ function setup() {
 Minden feladatot úgy kezdj el, hogy leklónozod az addig megnyitott programot (akár a játszóteret, akár az előző feladatét), és mielőtt bármit írnál az újba, adsz neki egy leírást (File > Add description). Innen fogod utólag tudni, hogy melyik program melyik volt.  
 
 (1) Írj egy programot, amiben három sprite van: az első kb. bal felülről indul és állandó sebességgel jobbra mozog, a második kb. jobb alulról mozog és állandó sebességgel balra halad, a harmadik pedig négyzet helyett hosszúkás, lapos, és csak egyhelyben áll a vászon közepén, vízszintesen.  
-(2) Írj egy programot, amiben három sprite van sorban egymás mellett. Mindháromnak adj színt, balról jobbra egyre világosabbat; mindháromnak adj méretet, balról jobbra egyre kissebbet; és mindhárom forogjon, balról jobbra egyre gyorsabban.  
+(2) Írj egy programot, amiben három sprite van sorban egymás mellett. Mindháromnak adj színt, balról jobbra egyre világosabbat; mindháromnak adj méretet, balról jobbra egyre kisebbet; és mindhárom forogjon, balról jobbra egyre gyorsabban.  
 
 __csillagos__  
 (3\*) Írj egy programot, amiben két sprite van. Mindkettőnek legyen véletlenszerű a helye (a teljes vásznon), a mérete (értelmes keretek között), mindkettőnek adj véletlen nagyságú és véletlen irányú sebességet, és véletlen nagságú forgási sebességet is. (Ne felejtsd el a forgatási sebességhez használt véletlenszám alsó határt negatívra állítani, hogy mindkét irányba tudjon forogni.)  
