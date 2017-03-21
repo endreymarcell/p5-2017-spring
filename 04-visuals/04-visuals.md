@@ -1,4 +1,4 @@
-# Negyedik óra: rajzolás
+# Negyedik óra: rajzolás (VÁZLAT)
 
 ## Ismétlés
 függvény mint olyan.  
