@@ -1,4 +1,4 @@
-# Harmadik óra: p5 dinamika (VÁZLAT)
+# Harmadik óra: p5 dinamika
 
 ## JSBin használat
 __Fájlok:__ A programjainkat (pontosabban a weblapokat, amikbe a programjainkat írjuk) a HTML, a CSS és a JavaScript fájl tartalmazza. Ezek közül nekünk az esetek 99%-ában csak a JS fájllal kell törődünk.  
@@ -209,14 +209,14 @@ A sprite-ok alapesetben szépen átmennek egymáson. p5-ben azonban van arra leh
 Indítsunk két sprite-tal, melyek közül az egyik elindul a másik felé:  
 ```
 function setup() {
-    createCanvas(windowWidth, windowHeight)
+	createCanvas(windowWidth, windowHeight)
 	bob = createSprite(50, 200)
 	alice = createSprite(300, 200)
 	bob.setSpeed(2, 0)
 }
 
 function draw() {
-    background("white")
+	background("white")
 	drawSprites()
 }
 ```
@@ -224,7 +224,7 @@ bob a képernyő bal széle felől halad alice felé. Ha semmi mást nem írunk 
 ```
 function draw() {
 	bob.collide(alice)
-    background("white")
+	background("white")
 	drawSprites()
 }
 ```
@@ -233,7 +233,7 @@ Ha azt szeretnénk, hogy találkozáskor bob ne álljon meg egy helyben, hanem �
 ```
 function draw() {
 	bob.displace(alice)
-    background("white")
+	background("white")
 	drawSprites()
 }
 ```
@@ -244,7 +244,7 @@ Van egy harmadik függvényünk is, a `bounce()`, melynek segítségével a spri
 ```
 function draw() {
 	bob.bounce(alice)
-    background("white")
+	background("white")
 	drawSprites()
 }
 ```
@@ -253,7 +253,7 @@ function draw() {
 Ha azt szeretnénk szimulálni, hogy a két összeütköző sprite-nak nem azonos a tömege, akkor módosítsuk a sprite-ok `mass` változóját! Ennek az értéke alapesetben minden sprite-nál 1, de átírhatjuk kisebbre vagy nagyobbra, és ez hatással lesz arra, hogy hogyan pattannak le egymásról. Például ha alice tömegét sokkal nagyobbra állítjuk, mint bobét, akkor bob sokkal nagyobb sebességgel pattan vissza, mint amennyire alice-t ki tudja billenteni az álló helyzetéből. Példaprogram:  
 ```
 function setup() {
-    createCanvas(windowWidth, windowHeight)
+	createCanvas(windowWidth, windowHeight)
 	bob = createSprite(50, 200)
 	alice = createSprite(300, 200)
 	bob.mass = 0.5
@@ -263,7 +263,7 @@ function setup() {
 
 function draw() {
 	bob.bounce(alice)
-    background("white")
+	background("white")
 	drawSprites()
 }
 ```
