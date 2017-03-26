@@ -28,4 +28,33 @@
   window.square = function(x, y, a) {
     rect(x, y, a, a);
   }
+
+  window.pulse = function(from, to, speed) {
+    if (typeof speed === 'undefined') {
+      speed = 1
+    }
+    var middle = (from + to) / 2
+    var amplitude = Math.abs(from - to) / 2
+    return middle + amplitude * sin(frameCount / 50 * speed)
+  }
+
+  window.oneway = function(from, to, speed) {
+    if (typeof speed === 'undefined') {
+      speed = 1
+    }
+    var distance = Math.abs(from - to)
+    return from + (frameCount * speed) % distance
+  }
+
+  window.twoway = function(from, to, speed) {
+    if (typeof speed === 'undefined') {
+      speed = 1
+    }
+    var distance = Math.abs(from - to)
+    var full = (frameCount * speed) % (distance * 2)
+    if (full > distance) {
+      full = 2 * distance - full
+    }
+    return from + full
+  }
 })();
