@@ -45,7 +45,7 @@ stb. Mindehova, ahova számot lehet írni.
 (1/d) Pulzáló falevelek  
 (1/e) Lengő golyók  
 (1/f) Versenyző vízcseppek  
-(1/g) Foucalt-inga  
+(1/g) Nyolcasok  
 (1/h) Egymásnak hajtó autók  
 (1/i) Nyan-invázió  
 (1/j) Falevelek  
@@ -63,8 +63,8 @@ További speciális függvények a `preload()`, a `setup()` és a `draw()` után
 (2) Írj "nyomdázós" programot: ha kattintasz valahol, oda kerüljön egy bajusz!  
 (3) Írj programot, amiben egy sprite forog a képernyő közepén, és ha kattintasz, oda ugrik, ahol az egér van!  
 (4) Írj programot ugráló sprite-tal! Legyen egy mozdíthatatlan "talaj", legyen egy sprite, amire gravitáció hat (`addSpeed()` lefelé a `draw()`-ban), és ha lenyomsz egy billentyűt, ugrik egy nagyot felfelé (`addSpeed()` felfelé)!  
-(5*) 
-(6*) 
+(5*) TODO
+(6*) TODO
 
 «szünet»  
 
