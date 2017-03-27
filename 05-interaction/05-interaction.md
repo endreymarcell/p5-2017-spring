@@ -28,10 +28,11 @@ Segédfüggvények mozgó sketchekhez:
 
 Rá lehet kötni dolgok  
 - helyére: `square(oneway(...), 100, 100)`  
-- méretére: `circle(width / 2, height / 2, twoway(...))  
+- méretére: `circle(width / 2, height / 2, twoway(...))`  
 - forgására:  `bob.rotation = pulse(...)`
 - színére: `background(twoway(...))`  
 - átlátszóságára: `fill(pulse(...))`  
+
 stb. Mindehova, ahova számot lehet írni.  
 
 
@@ -58,12 +59,14 @@ További speciális függvények a `preload()`, a `setup()` és a `draw()` után
 `mouseClicked()` --> amit ebbe írsz, akkor fut le, ha kattintasz az egérrel.  
 `keyPressed()` --> amit ebbe írsz, akkor fut le, ha megnyomod bármelyik billentyűt.  
 
+TODO megmutatom  
+
 ### Feladatok:  
 
 (2) Írj "nyomdázós" programot: ha kattintasz valahol, oda kerüljön egy bajusz!  
 (3) Írj programot, amiben egy sprite forog a képernyő közepén, és ha kattintasz, oda ugrik, ahol az egér van!  
 (4) Írj programot ugráló sprite-tal! Legyen egy mozdíthatatlan "talaj", legyen egy sprite, amire gravitáció hat (`addSpeed()` lefelé a `draw()`-ban), és ha lenyomsz egy billentyűt, ugrik egy nagyot felfelé (`addSpeed()` felfelé)!  
-(5*) TODO
+(5*) TODO  
 (6*) TODO
 
 «szünet»  
