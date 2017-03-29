@@ -76,13 +76,16 @@ További speciális függvények a `preload()`, a `setup()` és a `draw()` után
 `mouseClicked()` --> amit ebbe írsz, akkor fut le, ha kattintasz az egérrel.  
 `keyPressed()` --> amit ebbe írsz, akkor fut le, ha megnyomod bármelyik billentyűt.  
 
-TODO megmutatom  
+Egér példa: rajzolás  
+Billentyű példa: sprite mozgatása  
 
 ### Feladatok:  
 
 (2) Írj "nyomdázós" programot: ha kattintasz valahol, oda kerüljön egy bajusz!  
 (3) Írj programot, amiben egy sprite forog a képernyő közepén, és ha kattintasz, oda ugrik, ahol az egér van!  
 (4) Írj programot ugráló sprite-tal! Legyen egy mozdíthatatlan "talaj", legyen egy sprite, amire gravitáció hat (`addSpeed()` lefelé a `draw()`-ban), és ha lenyomsz egy billentyűt, ugrik egy nagyot felfelé (`addSpeed()` felfelé)!  
+(5*) Írj egy programot, amiben egy macska alakú sprite jön létre a vászon közepén, és elindul egy véletlenszerű irányba. Ha lenyomod bármelyik billentyűt, váltson irányt, ezúttal is teljesen véletlenszerűen. Próbáld meg a macskát mindig bent tartani a vásznon! Még izgalmasabb, ha sebességet is véletlenül választ magának, nem csak irányt.  
+(6*) Egészítsd ki az ötös programot úgy, hogy egy egér is legyen a vásznon, ami pont ugyanúgy viselkedik, mint a macska, csak ő nem a billentyűnyomásra, hanem az egérkattintásra változtat irányt!  
 
 «szünet»  
 
@@ -105,7 +108,7 @@ Védd meg a Földet a rakétától! Módosítsd az (1/d) (vagy bármelyik koráb
 
 (7/e) Süngyár  
 Írj egy programot, ami minden kattintáskor létrehoz egy sprite-ot a kattintás helyén, és ad neki némi sebességet véletlenszerű irányba. A sprite-nak legyen sün-alakja, és forgasd is be a mozgása irányába (`rotateToDirection`).  
-Ha ez megvan, írd át a programot úgy, hogy a sprite-oknak súrlódást adsz (`friction`), hogy ne hagyják el a képernyőt, és beállítod, hogy lepattanjanak egymásról. TODO
+Ha ez megvan, írd át a programot úgy, hogy a sprite-oknak súrlódást adsz (`friction`), hogy ne hagyják el a képernyőt, és beállítod, hogy lepattanjanak egymásról (azt azzal a trükkel tudod elérni, hogy az újonnan létrehozott sprite-on meghívod a `bounce()` függvényt, és nem egy konkrét sprite-ot adsz meg paraméternek, hanem az összeset: `allSprites`).  
 
 (7/f) Fogócska  
 Írj egy programot, amiben egy sprite el akarja kapni az egeredet. Ne közvetlenül kövesse, csak `attractionPoint`-ként. A játék lényege, hogy ne tudja elkapni az egeredet. Adj hozzá a programhoz egy kicsi falat is, ami fölé be tudsz bújni az egérrel, és amiről lepattan a sprite! A "fogó" sprite-nak adj valami jó kis képet alakként.  
