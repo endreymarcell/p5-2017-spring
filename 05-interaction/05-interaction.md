@@ -2,13 +2,15 @@
 
 ## Apróságok
 
-- debugging with the console
-- cmd shift L
-- loadimage
-- show it in local
-- latest version when sharing
-- js src fájlok megmutatása, miért is kell mindig az enyémből klónozni
-- save as template
+- debugging with the console  
+- cmd shift L  
+- loadimage  
+- show it in local  
+- latest version when sharing, illetve csak output sharing  
+- js src fájlok megmutatása, miért is kell mindig az enyémből klónozni  
+- save as template  
+- reference  
+- attractionPoint: magyarázat a 3. órai jegyzet végén, példa itt: http://jsbin.com/hutarah/edit?js,output  
 
 ## Még pár vizuális eszköz
 
@@ -40,16 +42,31 @@ stb. Mindehova, ahova számot lehet írni.
 
 Írj egy képernyőkímélőt, ami szép és mozog!  
 Ötletek:  
-(1/a) DVD-logó pattog a falakon belül  
-(1/b) Holdas-műholdas feladat fekete háttérrel, lepattanó sprite-okkal  
+(1/a) DVD-logó  
+A megoldás valahogy így nézne ki: https://www.youtube.com/watch?v=x949Kl3k5Do (csak a színváltások nélkül)  
+Kell négy sprite a vászon négy szélére, ezek lehetnek akár 1 pixel vastagságúak is. Kell továbbá egy sprite, ami kap alakul egy ilyen DVD-képet, és bounce-ol mind a négy falról.  
+
+(1/b) Nyan  
+Csinálj egy sprite-ot, ami a vászon bal szélénél még kicsit balrábbról (negatív x koordináta) halad a vászon jobb szélén még valamivel túlra. Adj neki alakként egy nyancat-képet. Ha ez megvan, csinálj még párat belőle.  
+
 (1/c) Villogó DANGER! felirat  
-(1/d) Pulzáló falevelek  
-(1/e) Lengő golyók  
+Írd ki a feketére festett vászonra nagy, piros betűkkel a "DANGER!" feliratot. A felirat ne fixen piros legyen, hanem villogjon (tehát pulzáljon piros és átlátszó között). Ha ez megvan, írd át a programot úgy, hogy minden egyes betű más ritmusban villog. (Ehhez a betűket egyenként kell kiírnod, és mindegyik előtt át kell állítanod a színt.)  
+
+(1/d) Műholdak (ha az eddigi órákon még nem írtad meg ezt a feladatot)  
+A sprite-oknak létezik egy `attractionPoint()` függvénye is, amivel "vonzási pontot" adhatunk a sprite-hoz. A függvény három számot vár: a vonzás erejét, illetve két koordinátát. Ha ezt a parancsot a draw-ban meghívod egy sprite-ra, akkor a megadott erővel elkezd vonzódni a megadott pont felé. Írj egy programot, amiben egy sprite kering a vászon közepe körül! A feketére festett vászon közepére tegyél egy képet, ami a holdat ábrázolja, a keringő sprite-nak pedig adj műhold-alakot. Azt, hogy a sprite rendesen pályára álljon a középpont körül, ne csak oda-vissza lendüljön egy vonalon, úgy érheted el, ha a setup-ban adsz neki egy sebességet, amivel "kilököd" az egyenes pályáról. Nem baj, ha a pálya nem tökéletes kör, csak legalább elliptikus legyen.  
+
+(1/e) Pendulum  
+A feladat erre emlékeztet: https://www.youtube.com/watch?v=yVkdfJ9PkRQ  
+Helyezz el öt-hat sprite-ot függőlegesen egymás alatt, a vászon középvonalán. "Lengesd" mindegyiket vízszintesen jobbra-balra az x koordinátájuk pulzáltatásával. Még jobb, ha ezüstgolyó-képet is adsz nekik.  
+
 (1/f) Versenyző vízcseppek  
-(1/g) Nyolcasok  
+Indíts el egy vízcsepp-képű sprite-ot a vászon tetejéről lefelé, és a `draw()`-ban mindig adj a neki valamennyi sebességet lefelé `addSpeed()`-del. A hozzáadott sebesség mértékét randommal hozd létre, negatív alsó határral, hogy ne csak gyorsulni, de lassulni is tudjon. Ha ez megvan, csinálj még több vízcseppet, amik aztán egymással versenyeznek.  
+
+(1/g) Szivárvány-nyolcasok  
+Razolj a képre egy kört, aminek mind az x, mind az y koordinátája pulzál, de az egyik kétszer olyan gyorsan, mint a másik! Ha jól csináltad, a kör nyolcasokat fog leírni. Írd meg a programot úgy, hogy csíkot húzzon maga után (ne legyen `background()`), és minden pillanatban véletlen legyen a kitöltőszíne, kerete pedig ne legyen!  
+
 (1/h) Egymásnak hajtó autók  
-(1/i) Nyan-invázió  
-(1/j) Falevelek  
+Csinálj két sprite-ot, amik a vászon bal és jobb széléről indulva vízszintesen egymás felé haladnak, de pont az összeütközés előtt visszaugranak a kiindulópontjukra, és indulnak megint. A sprite-oknak adj autó-képet. Ha ketten már vannak, adj hozzá még párat, amik ferdén, mondjuk a bal felső vagy a jobb alsó sarokból hajtanak közép felé. Ügyelj rá, hogy minden autó arra nézzen, amirre halad (`rotation`).  
 
 «szünet»  
 
@@ -66,8 +83,6 @@ TODO megmutatom
 (2) Írj "nyomdázós" programot: ha kattintasz valahol, oda kerüljön egy bajusz!  
 (3) Írj programot, amiben egy sprite forog a képernyő közepén, és ha kattintasz, oda ugrik, ahol az egér van!  
 (4) Írj programot ugráló sprite-tal! Legyen egy mozdíthatatlan "talaj", legyen egy sprite, amire gravitáció hat (`addSpeed()` lefelé a `draw()`-ban), és ha lenyomsz egy billentyűt, ugrik egy nagyot felfelé (`addSpeed()` felfelé)!  
-(5*) TODO  
-(6*) TODO
 
 «szünet»  
 
@@ -75,16 +90,37 @@ TODO megmutatom
 
 Írj egy játékot vagy egyéb interaktív programot, ami reagál az egérre vagy a billentyűzetre!  
 Ötletek:  
-(7/a) Lebutított Flappy Bird: a fal-sprite mindig ugyanolyan magasságban van. de azért a madár ugrálhat. Ezt később esetleg fel lehet okosítani teljes értékű játékká.  
-(7/b) üstökös csóvával: nem teljesen fekete background  
-(7/c) anyabolygót megvédeni: lepattinta a belecsapódni akaró rakétát  
-(7/d) vonalakat összekötős rajzolós  
-(7/e) ahova kattintasz, ott jöjjön létre egy sprite és induljon el a nagyvilágba (rotateToDirection süni/űrhajó/valami). ja, és pattanjanak le egymásról - groups!  
-(7/f) menekülős, fal mögé kell menni  
-(7/g) szivárványt rajzolós pulzáló színekkkel  
-(7/h) szív, ami minden rákattintás után egyre gyorsabban dobog  
-(7/i) egér helyett egér-sprite követi az egér helyét  
-(7/j) három, különböző random sebességgel leeső pinponglabdát visszaütögetni
+(7/a) Flappy Bird - béta verzió  
+Csinálj egy sprite-ot, adj neki flappy bird-alakot, és gravitációs vonzást (kicsi `addSpeed()` lefelé a `draw()`-ban). Írd meg, hogy ha kattintasz az egérrel, a sprite ugrik egyet felfelé (nagy `addSpeed()` felfelé). Ha ez megvan, csinálj egy "fal"-sprite-ot, ami a Flappy Bird alsó oszlopához hasonló, és folyamatosan halad a vászon jobb szélétől balra, majd visszaugrik jobbra (`oneway()`).  
+(Ezt pár óra múlva ki tudjuk majd egészíteni egy teljes Flappy Birddé.)  
+
+(7/b) Halley-üstökös  
+Írj egy programot, amiben mindig egy kört rajzolsz oda, ahol épp az egér van. Ha ez megvan, a kör belsejét színezd világos narancssárgára, a hátteret pedig kicsit áttetsző feketére, hogy az üstökös csíkot húzzon maga után.  
+
+(7/c) Invázió  
+Védd meg a Földet a rakétától! Módosítsd az (1/d) (vagy bármelyik korábbi, annak alapjául szolgáló) feladatot úgy, hogy a vászon közepén a Föld legyen, a körülötte az általa vonzott (`attractionPoint`) sprite-nak pedig rakéta-alakja. (Ne felejtsd el a rakéta-sprite `rotateToDirection`-jét `true`-ra állítani.) Ha ez megvan, csinálj egy sprite-ot, ami mindig követi az egeret, és lepattan róla a rakéta (`bounce()`).  
+
+(7/d) Straight lines  
+Írj egy programot, amivel vonalakat lehet rajzolni: ha kattintasz bárhova, egy vastag, véletlens színű vonallal összeköti a kattintásod helyét az előző kattintás helyével. (Ehhez a kattintás helyét el kell mentened változókba, hogy a következő kattintásnál tudd, mivel kell összekötni az egér mostani helyét.)  
+
+(7/e) Süngyár  
+Írj egy programot, ami minden kattintáskor létrehoz egy sprite-ot a kattintás helyén, és ad neki némi sebességet véletlenszerű irányba. A sprite-nak legyen sün-alakja, és forgasd is be a mozgása irányába (`rotateToDirection`).  
+Ha ez megvan, írd át a programot úgy, hogy a sprite-oknak súrlódást adsz (`friction`), hogy ne hagyják el a képernyőt, és beállítod, hogy lepattanjanak egymásról. TODO
+
+(7/f) Fogócska  
+Írj egy programot, amiben egy sprite el akarja kapni az egeredet. Ne közvetlenül kövesse, csak `attractionPoint`-ként. A játék lényege, hogy ne tudja elkapni az egeredet. Adj hozzá a programhoz egy kicsi falat is, ami fölé be tudsz bújni az egérrel, és amiről lepattan a sprite! A "fogó" sprite-nak adj valami jó kis képet alakként.  
+
+(7/g) Szivárványfestés  
+Írj egy programot, ami folyamatosan kört rajzol az egér helyére! `background()` ne legyen benne, így a kör csíkot fog húzni. Ha ez megvan, írd át úgy, hogy a kör kitöltőszínének mindhárom komponense mozogjon (akár oneway, akár twoway, akár pulse) 0 és 255 között.  
+
+(7/h) Dobogó szív  
+Keress egy képet egy szívről, és pulzáltasd a méretét (`sprite.scale`). Írd meg úgy a programot, hogy valahányszor kattintasz, a szív elkezd egy kicsit gyorsabban dobogni.  
+
+(7/i) Windows  
+Írj egy programot, ami eltüntetni az eredeti egeret (`noCursor()`), és csinálj egy egér-alakú sprite-ot, ami mindig valamennyi késéssel követi az igazi, de láthatatlan egeret (`attractionPoint`). Használd a `limitSpeed()` függvényt a `draw()`-ban, hogy az egér-sprite ne tudjon nagyon felgyorsulni.  
+
+(7/j) Pingpong  
+Csinálj egy labda alakú sprite-ot, amire hat a gravitáció (kis `addSpeed()` lefelé a `draw()`-ban), és egy "ütőt", egy lapos, széles sprite-ot, amiről visszapattan a labda. A labda a vászon tetején, középen legyen, az ütő pedig a vászon alján, középen. Ha ez eddig megvan, írd át úgy, hogy az ütő mindig lent maradjon, de vízszintesen jobbra-balra kövesse az egér helyét, és adj hozzá még két labda-sprite-ot. A sprite-oknak randommal adj egy kis kezdősebességet felfelé vagy lefelé, hogy véletlenszerűen kezdjenek el leesni. A játék lényege, hogy az ütővel minden labdát a levegőben tartsd, egyiket se engedd "kiesni" a vászonról.  
 
 ## Csillagos: saját sprite-alak
 
