@@ -35,7 +35,8 @@
     }
     var middle = (from + to) / 2
     var amplitude = Math.abs(from - to) / 2
-    return middle + amplitude * sin(frameCount / 50 * speed)
+    var direction = to > from ? 1 : -1
+    return middle + direction * amplitude * sin(frameCount / 50 * speed)
   }
 
   window.oneway = function(from, to, speed) {
@@ -43,7 +44,8 @@
       speed = 1
     }
     var distance = Math.abs(from - to)
-    return from + (frameCount * speed) % distance
+    var direction = to > from ? 1 : -1
+    return from + direction * (frameCount * speed) % distance
   }
 
   window.twoway = function(from, to, speed) {
@@ -55,6 +57,7 @@
     if (full > distance) {
       full = 2 * distance - full
     }
-    return from + full
+    var direction = to > from ? 1 : -1
+    return from + direction full
   }
 })();

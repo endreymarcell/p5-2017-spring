@@ -1,43 +1,118 @@
-# Ötödik óra: egér és billentyűzet (VÁZLAT)
+# Ötödik óra: egér és billentyűzet
 
 ## Apróságok
 
-- debugging with the console  
-- cmd shift L  
-- loadimage  
-- show it in local  
-- latest version when sharing, illetve csak output sharing  
-- js src fájlok megmutatása, miért is kell mindig az enyémből klónozni  
-- save as template  
-- reference  
-- attractionPoint: magyarázat a 3. órai jegyzet végén, példa itt: http://jsbin.com/hutarah/edit?js,output  
+- Hibakeresés konzollal: ha a program nem fut le, lehet, hogy hibaüzenetet ír a konzolra, ami segít megtalálni a hibát. Nyissük meg a konzolt, és futtassuk újra a programot.  
+- A `loadimage()` függvény neve kivételesen nem camelCase, hanem csupa kisbetű, az image i-jét beleértve.  
+- A programjainkat praktikus szempontok miatt írjuk JSBinen, ez nem jelenti azt, hogy csak JSBinen futhatnak JavaScript, illetve p5 programok. File > Download alatt le is tudjuk tölteni a programot egy .html fájlként, és a saját gépről is bármikor meg tudjuk nyitni böngészővel.  
+- Bin megosztásakor a Share menüből nem a Snapshot, hanem a Latest opciót érdemes választani, mert az így kapott link az elmentett verzióktól függetlenül mindig a legfrisseb változatot fogja megnyitni. Ha a program forráskódját nem, csak a kimenetét szeretnénk megosztani, akkor pedig az Output only opció a barátunk.  
+- Ha [ezt a bin-t](http://jsbin.com/lavuxi/edit?css,js,output) elmentjük sablonként a File > Save as template opcióval, akkor onnantól minden File > New után olyan bint kapunk, amiben már minden p5-ös hivatkozás elő van készítve, illetve van egy minimális `setup()` és `draw()` alap is.  
+- Igyekezzünk megtanulni a referencia használatát: [p5 referencia](https://p5js.org/reference/), [p5.play Sprite referencia](http://p5play.molleindustria.org/docs/classes/Sprite.html). Ezekben ellenőrizhetjük, hogy kell egyes függvényeket és változókat használni.  
+- A mai óra feladataiban több helyen is előforduló `attractionPoint()` függvényről bővebb magyarázatot találunk a [3. órai jegyzet végén](https://github.com/endreymarcell/p5-2017-spring/blob/master/03-dynamics/03-dynamics.md#feladatok-1), illetve a [p5.play referenciában](http://p5play.molleindustria.org/docs/classes/Sprite.html#method-attractionPoint), itt pedig a használatát láthatuk egy programban: http://jsbin.com/hutarah/edit?js,output  
 
 ## Még pár vizuális eszköz
 
-Tudok sprite-okat is áttetszővé tenni? Igen:  
+### Áttetszőség  
+
+- Hogyan lehet Sprite-okat áttetszővé tenni?  
+
+Eddig sprite-ok színét a `shapeColor` változójukkal állítottuk be:  
 `bob.shapeColor = "white"`  
-helyett  
+Illetve azt tanultuk, hogy ha egy színt áttetszővé szeretnénk tenni, azt RGBA színkóddal tudjuk megtenni, például `fill("white")` helyett `fill(255, 255, 255, 100)`. (Az első három szám az RGB színkód, mely ez esetben fehéret jelöl, a negyedik pedig a "láthatóság".)  
+A `shapeColor` esetében a `color()` függvénnyel tudunk RGBA színkódot használni:  
 `bob.shapeColor = color(255, 255, 255, 100)`  
 
-Tudok képeket is áttetszővé tenni? Igen:  
-`image()` előtt `tint(255, 255, 255, 100)`  
-`noTint()` kikapcsolja  
+
+- Hogyan lehet `image()` függvénnyel megrajzolt képeket áttetszővé tenni?
+
+Az `image()` függvény előtt kiadott `tint()` paranccsal meg tudjuk színezni a képet. Ha színt nem, csak áttetszőséget akarunk a képnek adni, használjunk RGBA színkódot és fehér színt:  
+`tint(255, 255, 255, 100)`  
+`image(imageVariable, 100, 200)`  
+
+
+- (csillagos) Hogyan lehet Sprite-hoz `addImage()`-dzsel hozzáadott képet áttetszővé tenni?  
+
+Magyarázat a jegyzet alján.  
+Megoldás:  
+```
+function setup() {
+	bob = createSprite()
+	bob.addImage(imageVariable)
+}
+```
+helyett
+```
+function myDraw() {
+	tint(255, 255, 255, 100)
+	image(imageVariable, 100, 200)
+}
+
+function setup() {
+	bob = createSprite()
+	bob.draw = myDraw
+}
+```
+
+### Mozgás  
 
 Segédfüggvények mozgó sketchekhez:  
 `oneway(from, to, speed)`  
 `twoway(from, to, speed)`  
 `pulse(from, to, speed)`  
 
-Rá lehet kötni dolgok  
-- helyére: `square(oneway(...), 100, 100)`  
-- méretére: `circle(width / 2, height / 2, twoway(...))`  
-- forgására:  `bob.rotation = pulse(...)`
-- színére: `background(twoway(...))`  
-- átlátszóságára: `fill(pulse(...))`  
+Ezeket a függvényeket olyan helyeken tudjuk használni, ahova alapvetően számot írnánk: sprite helyénél, forgásánál, alakzat méreténél, színeknél, színek áttetszőségénél...  
 
-stb. Mindehova, ahova számot lehet írni.  
+Például ha azt akarjuk, hogy a `guard` nevű sprite folyamatosan átmenjen vízszintesen a vászon bal szélétől a jobb széléig, itt visszaugorjon a bal szélre és újra elinduljon jobbra stb., akkor a `draw()` függvényben használhatjuk a `oneway()` függvényt:  
+`guard.position.x = oneway(0, width)`  
+Megjegyzés: a harmadik paraméter, ami a sebességet adja meg, opcionális. Ha nem adunk meg harmadik paramétert, az alapértelmezett sebesség 1 lesz.  
+Figyelem: mivel ezzel a függvénnyel közvetlenül állítgatjuk a sprite x koordinátáját, ezért ilyenkor nem kell a sprite-na sebességet adnunk, tehát nem használunk `setSpeed()` vagy `addSpeed()` függvényt.  
 
+Megnövő-lecsökkenő méretű kör `twoway()` függvénnyel:  
+`circle(width / 2, height / 2, twoway(100, 300, 3))`  
 
+Ide-oda forgó sprite `pulse()` függvénnyel:  
+`bob.rotation = pulse(0, 180)`  
+Figyelem: a helyzet ugyanaz, mint fent az x koordináta és a sebesség viszonyával, tehát ha a forgást (`rotation` változó) közvetlenül megadjuk, akkor forgási sebességet (`rotationSpeed`) nem használunk.  
+
+Példaprogram egy irányba mozgó négyzettel, megnövő-lecsökkenő méretű körrel és pulzáló forgású sprite-tal:  
+```
+function setup() {
+	createCanvas(windowWidth, windowHeight)
+	bob = createSprite(width / 2, height / 2)
+}
+
+function draw() {
+	background("white")
+	
+	// 50 méretű, a vászon bal szélétől a jobb szélig mozgó négyzet
+	square(oneway(0, width), 100, 50)
+
+	// lassan megnövő-lecsökkenő kör
+	circle(300, 200, twoway(50, 150, 0.5))
+
+	// ide-oda forgó sprite
+	bob.rotation = pulse(0, 180)
+
+	allSprites.draw()
+}
+```
+
+Példaprogram pulzáló átlátszóságú képpel (ld. az előző elfejezetben a képek átlátszóságát):  
+```
+function preload() {
+	ghostImage = loadimage("http://static.wixstatic.com/media/5b670a_9eea3aee729e4c2f897c27bd2bdc5fa5.png_256")
+}
+
+function setup() {
+	createCanvas(windowWidth, windowHeight)
+}
+
+function draw() {
+	background("black")
+	tint(255, 255, 255, pulse(0, 255))
+	image(ghostImage, width / 2, height / 2)
+}
+```
 ## Nagy feladat: képernyőkímélő
 
 Írj egy képernyőkímélőt, ami szép és mozog!  
@@ -68,26 +143,74 @@ Razolj a képre egy kört, aminek mind az x, mind az y koordinátája pulzál, d
 (1/h) Egymásnak hajtó autók  
 Csinálj két sprite-ot, amik a vászon bal és jobb széléről indulva vízszintesen egymás felé haladnak, de pont az összeütközés előtt visszaugranak a kiindulópontjukra, és indulnak megint. A sprite-oknak adj autó-képet. Ha ketten már vannak, adj hozzá még párat, amik ferdén, mondjuk a bal felső vagy a jobb alsó sarokból hajtanak közép felé. Ügyelj rá, hogy minden autó arra nézzen, amirre halad (`rotation`).  
 
-«szünet»  
-
 ## Egér és billentyűzet
 
 További speciális függvények a `preload()`, a `setup()` és a `draw()` után:  
-`mouseClicked()` --> amit ebbe írsz, akkor fut le, ha kattintasz az egérrel.  
-`keyPressed()` --> amit ebbe írsz, akkor fut le, ha megnyomod bármelyik billentyűt.  
+`mouseClicked()` --> amit ebbe írunk, akkor fut le, ha kattintunk az egérrel.  
+Figyelem: `mouseClick`**`ed`**`()`, nem pedig `mouseClick()`  
 
-Egér példa: rajzolás  
-Billentyű példa: sprite mozgatása  
+`keyPressed()` --> amit ebbe írunk, akkor fut le, ha megnyomjuk bármelyik billentyűt.  
+Figyelem: a program csak onnantól érzékeli a billentyűk lenyomását, hogy a Run with JS gomb után a vászonra kattintunk.  
+
+Példák:  
+Egy sprite igyekszik a képernyő bel szélétől a jobb szél felé, de egérkattintásra visszaugrik a bal szélre:  
+```
+function setup() {
+	createCanvas(windowWidth, windowHeight)
+	bob = createSprite(0, height / 2)
+	bob.setSpeed(1, 0)
+}
+
+function draw() {
+	background("white")
+	allSprites.draw()
+}
+
+function mouseClicked() {
+	bob.position.x = 0
+}
+```
+
+Piros kör kerül a kattintás helyére:  
+```
+function setup() {
+	createCanvas(windowWidth, windowHeight)
+	background("white")
+	fill("red")
+	noStroke()
+}
+
+function draw() {}
+
+function mouseClicked() {
+	circle(mouseX, mouseY, 75)
+}
+```
+
+A sprite-om minden billentyű lenyomásakor elfordul egy kicsit jobbra:  
+```
+function setup() {
+	createCanvas(windowWidth, windowHeight)
+	bob = createSprite(width / 2, height / 2)
+}
+
+function draw() {
+	background("white")
+	allSprites.draw()
+}
+
+function keyPressed() {
+	bob.rotation += 10
+}
+```
 
 ### Feladatok:  
 
 (2) Írj "nyomdázós" programot: ha kattintasz valahol, oda kerüljön egy bajusz!  
 (3) Írj programot, amiben egy sprite forog a képernyő közepén, és ha kattintasz, oda ugrik, ahol az egér van!  
 (4) Írj programot ugráló sprite-tal! Legyen egy mozdíthatatlan "talaj", legyen egy sprite, amire gravitáció hat (`addSpeed()` lefelé a `draw()`-ban), és ha lenyomsz egy billentyűt, ugrik egy nagyot felfelé (`addSpeed()` felfelé)!  
-(5*) Írj egy programot, amiben egy macska alakú sprite jön létre a vászon közepén, és elindul egy véletlenszerű irányba. Ha lenyomod bármelyik billentyűt, váltson irányt, ezúttal is teljesen véletlenszerűen. Próbáld meg a macskát mindig bent tartani a vásznon! Még izgalmasabb, ha sebességet is véletlenül választ magának, nem csak irányt.  
-(6*) Egészítsd ki az ötös programot úgy, hogy egy egér is legyen a vásznon, ami pont ugyanúgy viselkedik, mint a macska, csak ő nem a billentyűnyomásra, hanem az egérkattintásra változtat irányt!  
-
-«szünet»  
+(5\*) Írj egy programot, amiben egy macska alakú sprite jön létre a vászon közepén, és elindul egy véletlenszerű irányba. Ha lenyomod bármelyik billentyűt, váltson irányt, ezúttal is teljesen véletlenszerűen. Próbáld meg a macskát mindig bent tartani a vásznon! Még izgalmasabb, ha sebességet is véletlenül választ magának, nem csak irányt.  
+(6\*) Egészítsd ki az ötös programot úgy, hogy egy egér is legyen a vásznon, ami pont ugyanúgy viselkedik, mint a macska, csak ő nem a billentyűnyomásra, hanem az egérkattintásra változtat irányt!  
 
 ## Nagy feladat: játék  
 
@@ -142,8 +265,3 @@ bob.draw = catchme
 ```
 Figyelem: a `catchme` után itt nincs nyitó-csukó zárójel! (Ez azért van, mert a függvényt itt nem _meghívni_ akarjuk, csak hivatkozunk rá.)  
 Ezután valahányszor bob megrajzolódik, a helyén nem a színes négyzet, hanem a feliratunk jelenik meg. A saját rajzoló függvényünkben nem kell a `bob.position.x` illetve `y` változókra hivatkozni: a függvényen belül a (0, 0) pont jelenti majd a sprite középpontját.  
-
-
-## Érdekes lehet még
-
-collider
