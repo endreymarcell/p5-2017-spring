@@ -58,6 +58,6 @@
       full = 2 * distance - full
     }
     var direction = to > from ? 1 : -1
-    return from + direction full
+    return from + direction * full
   }
 })();
