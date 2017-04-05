@@ -2,6 +2,8 @@
 
 Ma sok új speciális karakter lesz. [Ajánlom a táblázatot](https://github.com/endreymarcell/p5-2017-spring/#speciális-karakterek).  
 
+Megjegyzés a bouce-ról.  
+
 ## Csoportok
 
 ### allSprites csoport  
