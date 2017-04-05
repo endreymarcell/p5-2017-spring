@@ -10,7 +10,6 @@ if (mouseX > 300) {
 }
 ```
 
-
 Feltételes szerkezet:  
 ```
 if («condiditon») {
