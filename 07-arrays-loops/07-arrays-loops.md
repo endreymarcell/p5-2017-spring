@@ -9,6 +9,7 @@ Megjegyzés a bouce-ról.
 ### allSprites csoport  
 
 allSprites  
+typeof(allSprites)  
 allSprites.length  
 
 bob = createSprite  
