@@ -1,4 +1,4 @@
-# Hatodik óra: programállapot és elágazás (if)
+# Hatodik óra: programállapot és elágazás (if) (VÁZLAT)
 
 ## Feltételes szerkezet
 

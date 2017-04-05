@@ -1,4 +1,4 @@
-# Hetedik óra: tömbök és ciklusok (for)
+# Hetedik óra: tömbök és ciklusok (for) (VÁZLAT)
 
 Ma sok új speciális karakter lesz. [Ajánlom a táblázatot](https://github.com/endreymarcell/p5-2017-spring/#speciális-karakterek).  
 
