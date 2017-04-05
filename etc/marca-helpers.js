@@ -60,4 +60,8 @@
     var direction = to > from ? 1 : -1
     return from + direction * full
   }
+
+  window.createGroup = function() {
+    return new Group();
+  }
 })();
