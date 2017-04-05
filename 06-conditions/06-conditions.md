@@ -29,6 +29,10 @@ Példa: sprite halad jobbra, egy bizonyos távolságnál forogni kezd
 Példa: sprite halad jobbra, egy bizonyos távolságnál megáll, esetleg elindul visszafelé  
 Gotcha: átugorhatja a konkrét pixelt  
 
+Írjuk meg a onewayt, twowayt (koordinátára)  
+
+__Csillagos__: írd meg a pulse-t. Itt nem a távolság végére kell tesztelni, hanem a közepére, és addSpeed-del korrigálni hol az egyik, hol a másik irányba. Tehát ha jobbra-balra leng egy sprite, akkor ha megtette már a táv felét, akkor balra kell addSpeed-et hívni, ha nem, akkor jobbra.  
+
 Példa: kezedeti kékre színezős, előbb két iffel, aztán else-ággal  
 
 ## Felhasználási módok
