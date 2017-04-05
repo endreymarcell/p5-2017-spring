@@ -26,23 +26,27 @@ illetve lehet referencia nélküli sprite-ot is utólag irányítani
 --> gondolatok arról, hogy ha nem akarunk később bob-ként hivatkozni valakire, akkor felesleges bobnak nevezni  
 illetve hogy a bob csak egy változó, ami bármelyik sprite-ra mutathat, nem pedig a sprite része, mint mondjuk a színe vagy a helye  
 
-Feladat:  
+__Feladat:__  
 (1) Írj egy programot, amiben van legalább három random helyen létrehozott sprite, meg egy, ami követi az egeret. Írd bele, hogy az egért követő sprite találkozás esetén eltolja (displace) az összes többi sprite-ot. Használd az `allSprites` csoportot.  
 (2\*) Egészítsd ki a programot úgy, hogy csak lenyomott egérgomb mellett tudja eltolni az egeret követő sprite a többit. Ellenkező esetben ütközzön nekik (collide).  
 
 ### Saját csoportok  
 
-dogs = new Group()  
+dogs = createGroup()  
 (új szintaxis, nem véletlenül nem hasonlít az eddigi dolgokra)  
 (dogs.length)  
 dogs.add(bob)  
 
-Feladat:  
+__Feladatok:__  
 (3) Írj egy programot, amiben van 2-3 kutya és 2-3 macska alakú sprite. Csinálj egy `dogs` és egy `cats` csoportot, és a létrehozott sprite-okat rakd beléjük. Legyen még egy sprite ezeken kívül, aminek csont alakja van, és követi az egeret. Írd meg, hogy a csont el tudja tolni (displace) a kutyákat, de nekiütközzön (collide) a macskáknak.  
 (4) Írj egy programot négy fal-sprite-tal: két lapos, vékony vízszintessel és két keskeny, magas függőlegessel. (Nem kell, hogy a vászon szélén legyenek.) Add őket hozzá egy `walls` nevű csoporthoz. Csinálj még egy sprite-ot az így létrehozott doboz közepén, adj neki véletlen irányú kezdősebességet, és állítsd be, hogy lepattanjon a falakról.  
 (5\*) TODO  
 
 ## for ciklus  
+
+Akarok egy random kört a vászonra? Oké. Akarok hármat? Oké. Akarok százat? Nana. Na jó.  
+Oké, most legyen mindegyik kicsit nagyobb. Na ne már.  
+--> for ciklus  
 
 hogy számol egy számítógép? csinál egy változót, növelgeti, és mindig megnézi, elérte-e már a felső határt.  
 kb valahogy így: (ez nem valódi kód!)  
@@ -86,32 +90,55 @@ function mouseClicked() {
 }
 ```
 
-Feladat:  
-TODO  
-
-## for ciklus groupokon  
-
-Hogy tudunk utasítást adni egy csoport minden tagjának?  
-Három sprite-nál:  
+Példa: sok sprite-ot csinálunk, és csoporthoz adjuk őket.  
 ```
-for (i = 0; i < 3; i += 1) {
-	allSprites[0].position.x += 10
-}
-```
-Általánosan: `i < allSprites.length`  
-
-Illetve sok sprite létrehozása ciklusban:  
-```
-stars = new Group()
+stars = createGroup()
 for (i = 0; i < 10; i += 1) {
 	star = createSprite()
 	stars.add(star)
 }
 ```
 
+## for ciklus: ciklusváltozó
+
+Az `i` változónkat fel tudjuk használni a cikluson belül.  
+`print(i)`  
+Esetleg x legyen `i * 100`  
+
+__Feladatok:__  
+(6) Írj egy statikus (tehát nem kell `draw()`, csak `setup()`) programot, ami futtatáskor világoskék háttérre kirakja egy hópehely képét. (Nem kell sprite, elég az `image()` függvény.) A hópehely kerüljön véletlen helyre a vásznon. - Ha ez megvan, írd át úgy a programot, hogy egy helyett száz hópelyhet csináljon.  
+(7) Írj egy statikus programot, ami egy véletlenszerű oszlopdiagramot generál. Először írj meg csak egy oszlopot, ami a vászon bal szélétől indul, 50 pixel széles, és a vászon aljától felmegy egészen a vászon teteje és a vászon fele között egy random magasságig. Ha ez megvan, tedd bele egy for ciklusba, ami 10 oszlopot generál. Az `i` ciklusváltozót fel kell használnod, amikor az oszlop bal szélének x koordinátáját számolod: az eredeti 0-hoz hozzá kell adnod annyiszor 50-et, ahányadik ismétlésnél tart a ciklus (`i`). - Ha még szebbre akarod megírni, állítsd be azt is, hogy az oszlopoknak mind random színe legyen, és a szélességük ne 50 legyen, hanem annyi, hogy pont kitöltsék a vásznat vízszintesen - tehát ha tíz oszlopod van, akkor egy oszlop szélessége legyen a vászon szélességének (`width`) pont egytized része.
+(7\*) Írd át az előző programot úgy, hogy ne fixen 10 oszlop jöjjön létre, hanem véletlen számú oszlop 10 és 20 között. Ehhez először generáld le randommal az oszlopok számát egy változóba (figyelem: a `random()` tört számot ad vissza, ezt a `round()`-dal tudod kerekíteni), ezt használd fel a for ciklusban felső határként, és mikor az oszlopok szélességét adod meg, akkor is ezzel a változóval oszd el a vászon szélességét.  
+(8\*) Írj egy programot, amiben kattintásra létrejön egy mosolygó smiley a kattintás helyén, és elindul random irányba. Ha ez megvan, írd át úgy, hogy ne egy, hanem három smiley jöjjön létre, és úgy induljanak el, hogy egyenletesen osztják három részre a 360 fokot. (Ehhez először generálj egy véletlen irányt egy változóba, ezt a változót add meg irányként az első smiley-nak, és ennek a 120, illetve 240 fokkal megnövelt változatát a másodiknak, illetve harmadiknak.) Rendezd a smiley-létrehozást for-ciklusba, a 120 fokok hozzáadása az `i` ciklusváltozó segítségével történjen. - Ha ez is megvan, írd át a programot úgy, hogy kattintáskor nem fixen három, hanem három és hat közötti, véletlen számú smiley jöjjön létre (ld. az előző feladatot.) Ehhez először generáld le randommal a smiley-k számát egy változóba (figyelem: a `random()` tört számot ad vissza, ezt a `round()`-dal tudod kerekíteni), ezt használd fel a for ciklusban felső határként, és a 120 helyett a megfelelő hozzáadandó fokot számold ki úgy, hogy a 360 fokot elosztod a smiley-k számával.  
+
+## for ciklus groupokon  
+
+Hogy tudunk utasítást adni egy csoport minden tagjának?  
+Három sprite-nál:  
+```
+allSprites[0].position.x += 10
+allSprites[1].position.x += 10
+allSprites[2].position.x += 10
+```
+
+for ciklussal, három sprite-nál:  
+```
+for (i = 0; i < 3; i += 1) {
+	allSprites[i].position.x += 10
+}
+```
+
+Általánosan: 
+```
+for (i = 0; i < allSprites.length; i += 1) {
+	allSprites[i].position.x += 10
+}
+```
+
+Ha idáig is eljutunk a mai órán, megeszem a kalapom.  
 Feladatok: TODO  
 (6)  
 (7)  
 (8)  
-(9)  
-(10)  
+(9\*)  
+(10\*)  
