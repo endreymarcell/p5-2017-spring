@@ -1,22 +1,19 @@
-# Hetedik óra: tömbök és ciklusok (for) (VÁZLAT)
-
-Ma sok új speciális karakter lesz. [Ajánlom a táblázatot](https://github.com/endreymarcell/p5-2017-spring/#speciális-karakterek).  
-
-Megjegyzés a bouce-ról.  
+# Hetedik óra: csoportok és ciklusok (for) (VÁZLAT)
 
 ## Csoportok
 
 ### allSprites csoport  
 
-allSprites  
-typeof(allSprites)  
-allSprites.length  
+`allSprites`  
+`typeof(allSprites)`  
+`allSprites.length`  
 
-bob = createSprite  
-allSprites.length  
+`bob = createSprite`  
+`allSprites.length`  
 
-alice, charlie  
-allSprites.length  
+`alice = createSprite`  
+`charlie = createSprite`  
+`allSprites.length`  
 
 Mit tud? draw-t láttuk, ezen felül van neki pl. bounce.  
 Két fal között pattogó labda, vagy akár négy fal között.  
@@ -28,6 +25,7 @@ ugyanaz, mint ha bobot mondanék
 illetve lehet referencia nélküli sprite-ot is utólag irányítani  
 --> gondolatok arról, hogy ha nem akarunk később bob-ként hivatkozni valakire, akkor felesleges bobnak nevezni  
 illetve hogy a bob csak egy változó, ami bármelyik sprite-ra mutathat, nem pedig a sprite része, mint mondjuk a színe vagy a helye  
+meditáció arról, hogy ha csak egyszer akarok utasításokat adni egy sprite-nak, utána hagyom, hadd menjen dolgára, akkor nyugodtan adhatom egymás után több sprite-nak ugyanazt a nevet  
 
 __Feladat:__  
 (1) Írj egy programot, amiben van legalább három random helyen létrehozott sprite, meg egy, ami követi az egeret. Írd bele, hogy az egért követő sprite találkozás esetén eltolja (displace) az összes többi sprite-ot. Használd az `allSprites` csoportot.  
@@ -35,15 +33,14 @@ __Feladat:__
 
 ### Saját csoportok  
 
-dogs = createGroup()  
-(új szintaxis, nem véletlenül nem hasonlít az eddigi dolgokra)  
-(dogs.length)  
-dogs.add(bob)  
+`dogs = createGroup()`  
+`dogs.length`  
+`dogs.add(bob)`  
 
 __Feladatok:__  
-(3) Írj egy programot, amiben van 2-3 kutya és 2-3 macska alakú sprite. Csinálj egy `dogs` és egy `cats` csoportot, és a létrehozott sprite-okat rakd beléjük. Legyen még egy sprite ezeken kívül, aminek csont alakja van, és követi az egeret. Írd meg, hogy a csont el tudja tolni (displace) a kutyákat, de nekiütközzön (collide) a macskáknak.  
+(3) Írj egy programot, amiben van 2-3 kutya és 2-3 macska alakú sprite. Csinálj egy `dogs` és egy `cats` csoportot, és a létrehozott sprite-okat rakd beléjük. Legyen még egy sprite ezeken kívül, aminek csont alakja van, és mindig az egér helyén jelenik meg. Írd meg, hogy a csont el tudja tolni (displace) a kutyákat, de nekiütközzön (collide) a macskáknak.  
 (4) Írj egy programot négy fal-sprite-tal: két lapos, vékony vízszintessel és két keskeny, magas függőlegessel. (Nem kell, hogy a vászon szélén legyenek.) Add őket hozzá egy `walls` nevű csoporthoz. Csinálj még egy sprite-ot az így létrehozott doboz közepén, adj neki véletlen irányú kezdősebességet, és állítsd be, hogy lepattanjon a falakról.  
-(5\*) Írj egy programot kék háttérrel és benne három polip alakú sprite-tal. Mindhárom lebegjen függőlegesen fel-le a pulse függvénnyel. Ha ez megvan, a program elején hozz létre nekik egy csoportot; írd meg, hogy ha rákattintasz valamelyikre, az adódjon hozzá a csoporthoz; és írd át úgy a draw-t, hogy csak azok a polipok lebegjenek, amik részei a csoportnak (`group.contains(sprite)`).  
+(5\*) Írj egy programot kék háttérrel és benne három polip alakú sprite-tal. Mindhárom lebegjen függőlegesen fel-le a pulse függvénnyel. Ha ez megvan, a program elején hozz létre nekik egy csoportot; írd meg, hogy ha rákattintasz valamelyikre, az adódjon hozzá a csoporthoz; és írd át úgy a draw-t, hogy csak azok a polipok lebegjenek, amik részei a csoportnak (`if (group.contains(sprite))`).  
 (6\*) Egészítsd ki az előző programot úgy, hogy ha egy épp lebegő polipra kattintasz, az kikerüljön a csoportból.  
 
 ## for ciklus  
@@ -53,13 +50,10 @@ Oké, most legyen mindegyik kicsit nagyobb. Na ne már.
 --> for ciklus  
 
 hogy számol egy számítógép? csinál egy változót, növelgeti, és mindig megnézi, elérte-e már a felső határt.  
-kb valahogy így: (ez nem valódi kód!)  
-i = 0  
-// LOOP  
-i < 3 ?  
-doSomething()  
-i += 1  
-// go to LOOP  
+biztosan lesz benne `i = 0`  
+lesz benne `i < 3`  
+és lesz benne `i += 1`  
+lesz benne egy adag parancs, amit ismételni kell  
 
 gyakorlatban:  
 ```
@@ -108,6 +102,7 @@ for (i = 0; i < 10; i += 1) {
 Az `i` változónkat fel tudjuk használni a cikluson belül.  
 `print(i)`  
 Esetleg x legyen `i * 100`  
+Példa ciklusváltozós rajzolásra  
 
 __Feladatok:__  
 (7) Írj egy statikus (tehát nem kell `draw()`, csak `setup()`) programot, ami futtatáskor világoskék háttérre kirakja egy hópehely képét. (Nem kell sprite, elég az `image()` függvény.) A hópehely kerüljön véletlen helyre a vásznon. - Ha ez megvan, írd át úgy a programot, hogy egy helyett száz hópelyhet csináljon.  
@@ -139,10 +134,9 @@ for (i = 0; i < allSprites.length; i += 1) {
 }
 ```
 
-Ha idáig is eljutunk a mai órán, megeszem a kalapom.  
 Feladatok:  
 (11) Írd át az előző órai propelleres feladatot úgy, hogy ne csak egy propeller legyen, hanem három, és a megfelelő billentyűk lenyomására mindháromnak megfelelő irányba változzon a forgási sebesség.  
 (12) Írj egy programot, ami a setup-ban random helyen létrehoz egy sprite-ot. A sprite legyen nagyon kicsi, és a draw-ban fekete háttérre rajzold fehér színnel, de pulzáló átlátszósággal. Ez lesz az első pislákoló csillag. Ha ez megvan, írd át a programot úgy, hogy a setup egy for ciklussal legalább 15 csillagot hozzon létre, és a draw egy for ciklussal végighaladva rajtuk mindegyiknek megfelelően állítsa be a színét.  
 (13) Egészítsd ki az előző feladatot úgy, hogy a vászon alján legyen még egy sprite, akinek filozófus alakja van (a csillagokat bámuló Milétoszi Thalész tiszteletére). Innentől nem használhatod az allSprites csoportot, hiszen akkor a filozófus is pislákolna a csillagokkal együtt. Ehelyett hozz létre egy csoportot a csillagoknak, a létrehozott csillag-sprite-okat tedd bele a csoportba a setup-ban, és a draw-ban ne az allSprites csoporton, hanem a csillagok csoportján menj végig a for ciklussal.  
-(14\*) Egészítsd ki az előző programot úgy, hogy ha kattintasz, a filozófus elindul a kép közepe felé. Adj neki súrlódást, és kattintásra setSpeed-et. A sebesség mértéke legyen random, az iránya pedig a vászon közepe felé mutasson: tehát ha a filozófus a vászon bal oldalán áll, akkor jobbra induljon, ha a jobb oldalán, akkor balra. (Egy if-fal vizsgáld meg, hogy viszonyul a filozófus helye a vászon feléhez, és az if-en belül add ki a megfelelő setSpeed utasítást.)  
+(14\*) Egészítsd ki az előző programot úgy, hogy ha kattintasz, a filozófus elindul a kép közepe felé. Adj neki súrlódást, és kattintásra setSpeed-et. A sebesség mértéke legyen random, az iránya pedig a vászon közepe felé mutasson: tehát ha a filozófus a vászon bal oldalán áll, akkor jobbra induljon, ha a jobb oldalán, akkor balra. (Egy if-fel vizsgáld meg, hogy viszonyul a filozófus helye a vászon feléhez, és az if-en belül add ki a megfelelő setSpeed utasítást.)  
 (15\*) Írd át a 6-os feladatot úgy, hogy a polipokon nem egyenként mész végig (rákattintás vizsgálatánál, illetve a pulzálásnál), hanem ciklussal. Ha ez megvan, egészítsd ki a programot a fentiekhez hasonlóan: legyen belőlük véletlen számú mondjuk 1 és 10 között.    
