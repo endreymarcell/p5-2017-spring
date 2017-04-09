@@ -20,7 +20,7 @@ Két fal között pattogó labda, vagy akár négy fal között.
 Figyelem: nem azért van neki bounce, mert sprite-ok vannak benne, hanem csak.  
 
 konkrét sprite-ok:  
-allSprites[0], 1, 2  
+`allSprites[0]`, 1, 2  
 ugyanaz, mint ha bobot mondanék  
 illetve lehet referencia nélküli sprite-ot is utólag irányítani  
 --> gondolatok arról, hogy ha nem akarunk később bob-ként hivatkozni valakire, akkor felesleges bobnak nevezni  
@@ -42,6 +42,8 @@ __Feladatok:__
 (4) Írj egy programot négy fal-sprite-tal: két lapos, vékony vízszintessel és két keskeny, magas függőlegessel. (Nem kell, hogy a vászon szélén legyenek.) Add őket hozzá egy `walls` nevű csoporthoz. Csinálj még egy sprite-ot az így létrehozott doboz közepén, adj neki véletlen irányú kezdősebességet, és állítsd be, hogy lepattanjon a falakról.  
 (5\*) Írj egy programot kék háttérrel és benne három polip alakú sprite-tal. Mindhárom lebegjen függőlegesen fel-le a pulse függvénnyel. Ha ez megvan, a program elején hozz létre nekik egy csoportot; írd meg, hogy ha rákattintasz valamelyikre, az adódjon hozzá a csoporthoz; és írd át úgy a draw-t, hogy csak azok a polipok lebegjenek, amik részei a csoportnak (`if (group.contains(sprite))`).  
 (6\*) Egészítsd ki az előző programot úgy, hogy ha egy épp lebegő polipra kattintasz, az kikerüljön a csoportból.  
+
+«szünet»  
 
 ## for ciklus  
 
@@ -109,6 +111,8 @@ __Feladatok:__
 (8) Írj egy statikus programot, ami egy véletlenszerű oszlopdiagramot generál. Először írj meg csak egy oszlopot, ami a vászon bal szélétől indul, 50 pixel széles, és a vászon aljától felmegy egészen a vászon teteje és a vászon fele között egy random magasságig. Ha ez megvan, tedd bele egy for ciklusba, ami 10 oszlopot generál. Az `i` ciklusváltozót fel kell használnod, amikor az oszlop bal szélének x koordinátáját számolod: az eredeti 0-hoz hozzá kell adnod annyiszor 50-et, ahányadik ismétlésnél tart a ciklus (`i`). - Ha még szebbre akarod megírni, állítsd be azt is, hogy az oszlopoknak mind random színe legyen, és a szélességük ne 50 legyen, hanem annyi, hogy pont kitöltsék a vásznat vízszintesen - tehát ha tíz oszlopod van, akkor egy oszlop szélessége legyen a vászon szélességének (`width`) pont egytized része.
 (9\*) Írd át az előző programot úgy, hogy ne fixen 10 oszlop jöjjön létre, hanem véletlen számú oszlop 10 és 20 között. Ehhez először generáld le randommal az oszlopok számát egy változóba (figyelem: a `random()` tört számot ad vissza, ezt a `round()`-dal tudod kerekíteni), ezt használd fel a for ciklusban felső határként, és mikor az oszlopok szélességét adod meg, akkor is ezzel a változóval oszd el a vászon szélességét.  
 (10\*) Írj egy programot, amiben kattintásra létrejön egy mosolygó smiley a kattintás helyén, és elindul random irányba. Ha ez megvan, írd át úgy, hogy ne egy, hanem három smiley jöjjön létre, és úgy induljanak el, hogy egyenletesen osztják három részre a 360 fokot. (Ehhez először generálj egy véletlen irányt egy változóba, ezt a változót add meg irányként az első smiley-nak, és ennek a 120, illetve 240 fokkal megnövelt változatát a másodiknak, illetve harmadiknak.) Rendezd a smiley-létrehozást for-ciklusba, a 120 fokok hozzáadása az `i` ciklusváltozó segítségével történjen. - Ha ez is megvan, írd át a programot úgy, hogy kattintáskor nem fixen három, hanem három és hat közötti, véletlen számú smiley jöjjön létre (ld. az előző feladatot.) Ehhez először generáld le randommal a smiley-k számát egy változóba (figyelem: a `random()` tört számot ad vissza, ezt a `round()`-dal tudod kerekíteni), ezt használd fel a for ciklusban felső határként, és a 120 helyett a megfelelő hozzáadandó fokot számold ki úgy, hogy a 360 fokot elosztod a smiley-k számával.  
+
+«szünet»
 
 ## for ciklus groupokon  
 
