@@ -8,11 +8,11 @@
 `typeof(allSprites)`  
 `allSprites.length`  
 
-`bob = createSprite`  
+`bob = createSprite()`  
 `allSprites.length`  
 
-`alice = createSprite`  
-`charlie = createSprite`  
+`alice = createSprite()`  
+`charlie = createSprite()`  
 `allSprites.length`  
 
 Mit tud? draw-t láttuk, ezen felül van neki pl. bounce.  
@@ -108,9 +108,13 @@ Példa ciklusváltozós rajzolásra
 
 __Feladatok:__  
 (7) Írj egy statikus (tehát nem kell `draw()`, csak `setup()`) programot, ami futtatáskor világoskék háttérre kirakja egy hópehely képét. (Nem kell sprite, elég az `image()` függvény.) A hópehely kerüljön véletlen helyre a vásznon. - Ha ez megvan, írd át úgy a programot, hogy egy helyett száz hópelyhet csináljon.  
-(8) Írj egy statikus programot, ami egy véletlenszerű oszlopdiagramot generál. Először írj meg csak egy oszlopot, ami a vászon bal szélétől indul, 50 pixel széles, és a vászon aljától felmegy egészen a vászon teteje és a vászon fele között egy random magasságig. Ha ez megvan, tedd bele egy for ciklusba, ami 10 oszlopot generál. Az `i` ciklusváltozót fel kell használnod, amikor az oszlop bal szélének x koordinátáját számolod: az eredeti 0-hoz hozzá kell adnod annyiszor 50-et, ahányadik ismétlésnél tart a ciklus (`i`). - Ha még szebbre akarod megírni, állítsd be azt is, hogy az oszlopoknak mind random színe legyen, és a szélességük ne 50 legyen, hanem annyi, hogy pont kitöltsék a vásznat vízszintesen - tehát ha tíz oszlopod van, akkor egy oszlop szélessége legyen a vászon szélességének (`width`) pont egytized része.
+(8) Írj egy statikus programot, ami egy véletlenszerű oszlopdiagramot generál. Először írj meg csak egy oszlopot, ami a vászon bal szélétől indul, 100 pixel széles, és a vászon tetejétől lemegy egészen a vászon fele és a vászon alja között egy random mélységig. (Nem kell sprite, használd a `rect()` függvényt, ami négy számot vár: az első kettő a rajzolandó téglalap bal felső sarkának x és y koordinátája, a harmadik a téglalap szélesssége, a negyedik a magassága.) Ne zavarjon, hogy az oszlopdiagram így fejjel lefelé fog állni, egyelőre jó lesz így.  
+Ha ez megvan, tedd bele egy for ciklusba, ami 10 oszlopot generál. Az `i` ciklusváltozót fel kell használnod, amikor az oszlop bal szélének x koordinátáját számolod: az eredeti 0-hoz hozzá kell adnod annyiszor 100-et, ahányadik ismétlésnél tart a ciklus (`i`).  
+Ha még szebbre akarod megírni, állítsd be azt is, hogy az oszlopoknak mind random színe legyen, és a szélességük ne 100 legyen, hanem annyi, hogy pont kitöltsék a vásznat vízszintesen - tehát ha tíz oszlopod van, akkor egy oszlop szélessége legyen a vászon szélességének (`width`) pont egytized része.  
+Illetve elgondolkodhatsz azon is, mit kéne módosítani a programon, hogy a diagram ne fejjel lefelé legyen, tehát hogy a vászon aljától induljanak az oszlopok felfelé.  
 (9\*) Írd át az előző programot úgy, hogy ne fixen 10 oszlop jöjjön létre, hanem véletlen számú oszlop 10 és 20 között. Ehhez először generáld le randommal az oszlopok számát egy változóba (figyelem: a `random()` tört számot ad vissza, ezt a `round()`-dal tudod kerekíteni), ezt használd fel a for ciklusban felső határként, és mikor az oszlopok szélességét adod meg, akkor is ezzel a változóval oszd el a vászon szélességét.  
-(10\*) Írj egy programot, amiben kattintásra létrejön egy mosolygó smiley a kattintás helyén, és elindul random irányba. Ha ez megvan, írd át úgy, hogy ne egy, hanem három smiley jöjjön létre, és úgy induljanak el, hogy egyenletesen osztják három részre a 360 fokot. (Ehhez először generálj egy véletlen irányt egy változóba, ezt a változót add meg irányként az első smiley-nak, és ennek a 120, illetve 240 fokkal megnövelt változatát a másodiknak, illetve harmadiknak.) Rendezd a smiley-létrehozást for-ciklusba, a 120 fokok hozzáadása az `i` ciklusváltozó segítségével történjen. - Ha ez is megvan, írd át a programot úgy, hogy kattintáskor nem fixen három, hanem három és hat közötti, véletlen számú smiley jöjjön létre (ld. az előző feladatot.) Ehhez először generáld le randommal a smiley-k számát egy változóba (figyelem: a `random()` tört számot ad vissza, ezt a `round()`-dal tudod kerekíteni), ezt használd fel a for ciklusban felső határként, és a 120 helyett a megfelelő hozzáadandó fokot számold ki úgy, hogy a 360 fokot elosztod a smiley-k számával.  
+(10\*) Írj egy programot, amiben kattintásra létrejön egy mosolygó smiley a kattintás helyén, és elindul random irányba. Ha ez megvan, írd át úgy, hogy ne egy, hanem három smiley jöjjön létre, és úgy induljanak el, hogy egyenletesen osztják három részre a 360 fokot. (Ehhez először generálj egy véletlen irányt egy változóba, ezt a változót add meg irányként az első smiley-nak, és ennek a 120, illetve 240 fokkal megnövelt változatát a másodiknak, illetve harmadiknak.) Rendezd a smiley-létrehozást for-ciklusba, a 120 fokok hozzáadása az `i` ciklusváltozó segítségével történjen.  
+Ha ez is megvan, írd át a programot úgy, hogy kattintáskor nem fixen három, hanem három és hat közötti, véletlen számú smiley jöjjön létre (ld. az előző feladatot.) Ehhez először generáld le randommal a smiley-k számát egy változóba (figyelem: a `random()` tört számot ad vissza, ezt a `round()`-dal tudod kerekíteni), ezt használd fel a for ciklusban felső határként, és a 120 helyett a megfelelő hozzáadandó fokot számold ki úgy, hogy a 360 fokot elosztod a smiley-k számával.  
 
 «szünet»
 
