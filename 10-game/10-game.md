@@ -1,3 +1,3 @@
-# Kilencedik óra: saját játék
+# Tizedik óra: saját játék
 
 TBD

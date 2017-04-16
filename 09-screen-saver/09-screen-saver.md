@@ -1,3 +1,5 @@
-# Nyolcadik óra: saját képernyőkímélő
+# Kilencedik: saját képernyőkímélő
 
 TBD
+
+leleplezések (helpers), hogyan tovább
