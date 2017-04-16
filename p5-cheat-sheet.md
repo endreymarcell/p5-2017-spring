@@ -172,9 +172,17 @@ A fenti változatban a `c` egy string, ami egy színt jelöl. RGB(A) színkód e
 
 `sprite.scale` - megadja vagy beállítja a sprite "nagyítását". Ha 1, a sprite pont akkora, amekkoraként létrehoztuk; egynél kisebb vagy nagyobb számnál a sprite arányosan csökken vagy növekszik. Alapesetben: 1.  
 
-`sprite.velocity.x` - megadja vagy beállítja a sprite vízszintes sebességtkomponensét.  
+`sprite.velocity.x` - megadja vagy beállítja a sprite vízszintes sebességkomponensét (szám).  
 
-`sprite.velocity.y` - megadja vagy beállítja a sprite függőleges sebességtkomponensét.  
+`sprite.velocity.y` - megadja vagy beállítja a sprite függőleges sebességkomponensét (szám).  
+
+`sprite.touching.top` - megadja, hogy a sprite teteje épp érintkezik-e másik sprite-tal (igaz/hamis).  
+
+`sprite.touching.bottom` - megadja, hogy a sprite alja épp érintkezik-e másik sprite-tal (igaz/hamis).  
+
+`sprite.touching.left` - megadja, hogy a sprite bal oldala épp érintkezik-e másik sprite-tal (igaz/hamis).  
+
+`sprite.touching.right` - megadja, hogy a sprite jobb oldala épp érintkezik-e másik sprite-tal (igaz/hamis).  
 
 <hr>
 
