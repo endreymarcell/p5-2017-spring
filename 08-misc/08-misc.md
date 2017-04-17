@@ -84,7 +84,7 @@ __Feladatok:__
 ### További események
 
 A mobilnak szerencsére nem csak érintőképernyője van, hanem mozgásérzékelője is. Ennek segítségével nem csak az érintést vizsgálhatjuk a `touchStarted()` függvényben, de a mobil mozgatását is: a `deviceTurned()` függvény a mobil bármilyen tengelyen való elforgatását érzékeli, a `deviceShaken()` a rázást, a `deviceMoved()` pedig bármilyen mozgatást.  
-A [következő program](http://jsbin.com/xedoxup/edit?js,output) például boldoggá teszi Bondot, ha rázzuk a martinijét, és idegessé, ha rázzuk:  
+A [következő program](http://jsbin.com/xedoxup/edit?js,output) például boldoggá teszi Bondot, ha rázzuk a martinijét, és idegessé, ha keverjük:  
 ```
 function preload() {
     happy = loadimage("http://www.dailystreetview.com/images_maps_cache/3116-street-view-assoc-redim.jpg")
