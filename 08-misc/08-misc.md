@@ -7,7 +7,7 @@ Ha a p5-höz hozzátesszük a p5.sound nevű plugint, hangok lejátszására is 
 Hangokat a képekhez hasonlóan a preload függvényben kell változóba tölteni az erre szolgáló `loadsound()` függvénnyel:  
 ```
 function preload() {
-	carSound = loadsound("http://some-website.com/path/to/car.mp3")
+	carSound = loadsound("http://endreymarcell.hu/p5v2/sounds/car.wav")
 }
 ```
 
@@ -19,9 +19,8 @@ function keyPressed() {
 ```
 Ha pedig erre volna szükségünk, a `stopSound()` függvénnyel meg tudjuk állítani: `stopSound(carSound)`.  
 Sajnos direkt linkelhető hangokat sokkal nehezebb találni az interneten, mint képeket, ezért ebből a gyűjteményből fogunk dolgozni:  
-TODO gyűjtemény  
-
-Illetve azért, hogy kevesebb idő menjen el a megfelelő képek kikeresésével, ezen az órán próbaképpen a képeket is gyűjteményből lehet választani: TODO gyűjtemény  
+https://github.com/endreymarcell/p5-2017-spring/blob/master/08-misc/08-sounds-pics.md  
+Illetve azért, hogy kevesebb idő menjen el a megfelelő képek kikeresésével, ezen az órán próbaképpen a képeket is a gyűjteményből lehet választani.
 
 __Feladatok:__  
 (1) Egészítsd ki a hatos óra egyes feladatát (Cookie Monster), hogy ne csak látszólag örüljön a keksznek a Cookie Monster, de hangot is adjon, mikor fölé viszed.  
@@ -107,8 +106,6 @@ function deviceShaken() {
     image(happy, width / 2, height / 2)
 }
 ```
-
-TODO kép- és hanggyűjtemény  
 
 __Feladatok:__  
 (9) Írj programot, amiben egy ostor van a képernyőn, és ha megrázod a mobilt ("csattintasz" vele), akkor ostorcsattanás hallatszik.  
