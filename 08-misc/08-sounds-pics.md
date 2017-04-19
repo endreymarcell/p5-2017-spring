@@ -68,11 +68,6 @@ http://www.alcove-games.com/wp-content/uploads/2013/03/spaceship.png
 http://findicons.com/files/icons/1266/baby_spaceships/128/viper_mark_ii.png  
 http://www.spore.com/static/thumb/500/078/786/500078786529.png  
 
-#### kutyaugatashoz hasznalhato gombok
-http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons-256/glossy-black-3d-buttons-icons-animals/012346-glossy-black-3d-button-icon-animals-animal-dog-print.png  
-http://vignette2.wikia.nocookie.net/callofduty/images/c/c0/Attack_Dogs_HUD_icon_BO.png/revision/latest?cb=20120117044617  
-https://image.flaticon.com/icons/png/128/374/374973.png  
-
 #### ostor
 https://hydra-media.cursecdn.com/ark.gamepedia.com/thumb/b/b9/Whip_%28Scorched_Earth%29.png/128px-Whip_%28Scorched_Earth%29.png?version=b16336dbb6732980d314b76f70be14f3  
 https://static-s.aa-cdn.net/img/gp/20600004093571/K3NtEvzdc8Ur_3_5UKVWYulWJlLCZKxiOJ51muj4CPEkKFbeU6jVdEe1dqPK1aima8M=w300?v=1  

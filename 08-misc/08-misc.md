@@ -7,14 +7,14 @@ Ha a p5-höz hozzátesszük a p5.sound nevű plugint, hangok lejátszására is 
 Hangokat a képekhez hasonlóan a preload függvényben kell változóba tölteni az erre szolgáló `loadsound()` függvénnyel:  
 ```
 function preload() {
-	carSound = loadsound("http://endreymarcell.hu/p5v2/sounds/car.wav")
+    carSound = loadsound("http://endreymarcell.hu/p5v2/sounds/car.wav")
 }
 ```
 
 Betöltés után a hangot a `playSound()` függvénnyel tudjuk elindítani, mely paraméterként a hangot tartalmazó változót várja:  
 ```
 function keyPressed() {
-	playSound(carSound)
+    playSound(carSound)
 }
 ```
 Ha pedig erre volna szükségünk, a `stopSound()` függvénnyel meg tudjuk állítani: `stopSound(carSound)`.  
@@ -27,7 +27,7 @@ __Feladatok:__
 (2) Írj egy programot, amiben egy kosárlabda alakú sprite pattog a földön, és minden pattanásnál dobbanó hangot ad ki, mint egy igazi labda. A hang kiadását `if`-be kell majd tenned, a feltételnél vizsgáld azt, hogy a sprite alja érintkezik-e éppen másik sprite-tal (ehhez ld. a [kisokost](https://github.com/endreymarcell/p5-2017-spring/blob/master/p5-cheat-sheet.md)).  
 (3) Zenekar: írj egy programot, amiben három sprite van. Mindháromnak legyen hangszer-alakja, és bármelyikre kattintasz, az adjon ki a hangszerének megfelelő hangot.  
 (4\*) Írj egy programot, amiben egy célkereszt-alakú sprite mindig ott van, ahol az egér, maga a kurzor pedig el van rejtve. Ha kattintasz az egérrel, dördüljön el egy lövés. Írj bele azt is, hogy a program indulásakor egy űrhajó alakú sprite induljon el a vászon közepéről véletlenszerű irányba, és írd bele, hogy ha kattintáskor a célkereszt és az űrhajó fedésben vannak, akkor hallatsszon robbanás is, és az űrhajó tűnjön el.  
-(5\*) A `playSound()` függvényt valójában én írtam, az eredeti kicsit másképp néz ki. Írj egy programot, ami gombnyomásra hangot ad ki (kutyaugatás). Utána nyisd meg a segédfüggvényeimet tartalmazó js fájlt, és próbáld meg kitalálni, mi volt az eredeti szintaxis a hangok lejátszására. Az én megoldásomba eleve bele van írva, hogy egy hang csak akkor induljon el, ha éppen nincs folyamatban (tehát hogy többször egyszerre ugyanaz a hang ne játszódhasson le, vagyis csak akkor kezdődhessen újra, ha már befejeződött). Írd át a programodat úgy, hogy az én `playSound()` függvényem helyett az eredeti alakot használod, és kihagyod belőle az újrajátszási feltételt - tehát többször is el lehet indítani a hangot párhuzamosan. Demonstráld az eredményt sok kutya ugatásával.  
+(5\*) A `playSound()` függvényt valójában én írtam, az eredeti kicsit másképp néz ki. Írj egy programot, ami billentyűnyomásra hangot ad ki (kutyaugatás). Utána nyisd meg a [segédfüggvényeimet tartalmazó js fájlt](http://endreymarcell.hu/p5v2/marca-helpers.js), és próbáld meg kitalálni, mi volt az eredeti szintaxis a hangok lejátszására. Az én megoldásomba eleve bele van írva, hogy egy hang csak akkor induljon el, ha éppen nincs folyamatban (tehát hogy többször egyszerre ugyanaz a hang ne játszódhasson le, vagyis csak akkor kezdődhessen újra, ha már befejeződött). Írd át a programodat úgy, hogy az én `playSound()` függvényem helyett az eredeti alakot használod, és kihagyod belőle az újrajátszási feltételt - tehát többször is el lehet indítani a hangot párhuzamosan. Demonstráld az eredményt sok kutya ugatásával.  
 
 ## Mobil
 
@@ -48,16 +48,16 @@ Képernyőre rajzolós [példaprogam](http://jsbin.com/kahacut/edit?js,output):
 ```
 function setup() {
     createCanvas(windowWidth, windowHeight)
-	noStroke()
-	fill("navy")
+    noStroke()
+    fill("navy")
     background("white")
 }
 
 function draw() {
-	allSprites.draw()
-	if (touchIsDown) {
-		circle(touchX, touchY, 50)
-	}
+    allSprites.draw()
+    if (touchIsDown) {
+        circle(touchX, touchY, 50)
+    }
 }
 ```
 
@@ -111,5 +111,5 @@ __Feladatok:__
 (9) Írj programot, amiben egy ostor van a képernyőn, és ha megrázod a mobilt ("csattintasz" vele), akkor ostorcsattanás hallatszik.  
 (10) Írj Game of Thrones "Shame" appot, ami kolompol, ha rázod a mobilt, és "Shame!"-et mond, ha megérinted a képernyőt.  
 (11) Írj egy programot, amiben Pusheen elalszik, ha nem mozgatod a telefont egy ideig. A program indulásakor legyen ébren; pár másodperc után feküdjön le; még pár másodperc után aludjon el; a telefon mozgatására pedig ébredjen fel. Ezt a fokozatosságot úgy tudod elérni, hogy a setup-ban csinálsz magadnak egy változót, amit elindítasz nulláról, és a draw-ban mindig növeled. Ez méri, mennyi idő telt el. A draw-ba kell egy if, ami ezt a változót vizsgálja. Ha a változó már elég nagy (pl. nagyobb száznál), akkor jöhet a második (lefekvős) kép; ha nagyobb mondjuk kétszáznál is, akkor jöhet az elalvós; különben legyen az éber. És persze a `deviceMoved()`-ban le kell nullázni a számlálót.  
-(12\*) Írj egy programot, amiben van egy kecske-sprite meg egy káposzta-sprite. Igen, elég fáradt vagyok. Véletlen helyen jöjjenek létre, és az a cél, hogy a kecskét megfogva rá kell húzni a káposztára. Hozz létre egy programállapot-változót, amiben azt tárolod, hogy épp visszük-e a kecskét - ez alapból nincs is. Az érintés kezdetekor meghívódó függvényben (`touchStarted()`) vizsgáld meg, hogy a kecskén van-e az ujj. Ha igen, állítsd a változódat úgy, hogy azt jelezze: épp visszük a kecskét, ellenkező esetben viszont kapcsold ezt ki. Az érintés mozgatásakor meghívódó függvényben írd meg, hogy a kecske kövesse az ujj helyét - de természetesen csak akkor, ha épp "cipelő" módban van a program. Az érintés befejeződésekor meghívódó függvényben pedig elég a kecske és a káposzta helyét vizsgálni. Ha fedik egymást, a káposzta tűnjön el.  
-(13\*) A mobil giroszkópja nem csak a mozgást tudja mérni, hanem azt is, hogy épp merre van fordítva a mobil. A p5-ös `rotationX` változó jelzi, hogy mennyire van megunk felé van magunktól kifelé döntve a mobil; a `rotationY` azt, hogy mennyire döntjük jobbra vagy balra; a `rotationZ` pedig azt, hogy mennyire forgatjuk körbe (döntjük oldalra, állítjuk fejjel lefelé stb., miközben a képernyő végig felénk néz). [Itt egy sablon](http://jsbin.com/saraqed/edit?js,output), amiben a vászon mind a négy falán mozdíthatatlan van fal. Írj bele még egy sprite-ot, ez lesz a labda. Írd bele, hogy minden falról lepattanjon. És most jön a trükk: írd bele, hogy a labda guruljon arra, amerre a mobilt döntöt. Ezt nem `addSpeed()`-del tudod megoldani, hanem úgy, hogy a labda-sprite `velocity.x`, illetve `velocity.y` változóit módosítod a forgatás-változók alapján. Kicsit félrevezető módon az x irányú sebességhez kell majd az Y rotációt hozzáadni és fordítva. Arra is figyelj, hogy a forgatás fokokban számol, ekkora számokat viszont nagyon sok lenne a sebességhez hozzáadni, úgyhogy a rotációnak csak a századrészét add a sebességhez. - Ha ez megvan, berakhatsz még pár mozdíthatatlan falat a pályára, és esetleg egy célt is, amit el kell érni a telefon megfelelő döntögetésével.  
+(12\*) Írj egy programot, amiben van egy kecske-sprite meg egy káposzta-sprite. Igen, elég fáradt vagyok. Véletlen helyen jöjjenek létre, és az a cél, hogy a kecskét megfogva rá kell húzni a káposztára. Hozz létre egy programállapot-változót, amiben azt tárolod, hogy épp visszük-e a kecskét - ez alapból nincs így. Az érintés kezdetekor meghívódó függvényben (`touchStarted()`) vizsgáld meg, hogy a kecskén van-e az ujj. Ha igen, állítsd a változódat úgy, hogy azt jelezze: épp visszük a kecskét, ellenkező esetben viszont kapcsold ezt ki. Az érintés mozgatásakor meghívódó függvényben írd meg, hogy a kecske kövesse az ujj helyét - de természetesen csak akkor, ha épp "cipelő" módban van a program. Az érintés befejeződésekor meghívódó függvényben pedig elég a kecske és a káposzta helyét vizsgálni. Ha fedik egymást, a káposzta tűnjön el.  
+(13\*) A mobil giroszkópja nem csak a mozgást tudja mérni, hanem azt is, hogy épp merre van fordítva a mobil. A p5-ös `rotationX` változó jelzi, hogy mennyire van megunk felé van magunktól kifelé döntve a mobil; a `rotationY` azt, hogy mennyire döntjük jobbra vagy balra; a `rotationZ` pedig azt, hogy mennyire forgatjuk körbe (döntjük oldalra, állítjuk fejjel lefelé stb., miközben a képernyő végig felénk néz). [Itt egy sablon](http://jsbin.com/saraqed/edit?js,output), amiben a vászon mind a négy falán mozdíthatatlan van fal. Írj bele még egy sprite-ot, ez lesz a labda. Írd bele, hogy minden falról lepattanjon. És most jön a trükk: írd bele, hogy a labda guruljon arra, amerre a mobilt döntöd. Ezt nem `addSpeed()`-del tudod megoldani, hanem úgy, hogy a labda-sprite `velocity.x`, illetve `velocity.y` változóit módosítod a forgatás-változók alapján. Kicsit félrevezető módon az x irányú sebességhez kell majd az Y rotációt hozzáadni és fordítva. Arra is figyelj, hogy a forgatás fokokban számol, ekkora számokat viszont nagyon sok lenne a sebességhez hozzáadni, úgyhogy a rotációnak csak a századrészét add a sebességhez. - Ha ez megvan, berakhatsz még pár mozdíthatatlan falat a pályára, és esetleg egy célt is, amit el kell érni a telefon megfelelő döntögetésével.  
