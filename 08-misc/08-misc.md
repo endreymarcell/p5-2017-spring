@@ -1,6 +1,8 @@
-# Nyolcadik óra: változók, hangok, mobil (VÁZLAT)
+# Nyolcadik óra: hangok, mobil
 
 ## Hangok
+
+__Megjegyzés:__ a hanglejátszás nem minden gépen és minden böngészőben működik jól. Ajánlott friss Chrome-mal próbálkozni.  
 
 Ha a p5-höz hozzátesszük a p5.sound nevű plugint, hangok lejátszására is használható lesz. Itt egy template, amibe a p5.sound is importálva van, ezt lehet kiindulásként használni (klónozni stb): http://jsbin.com/lupinu/edit?html,console  
 (Ha megnyitod a HTML oldalt, láthatod, hogy importálva van a "p5.sound.min.js" nevű fájl is. A korábbi programjainkban ez nem volt benne, ezért azokban nem működne a hanglejátszás.)  
@@ -10,6 +12,7 @@ function preload() {
     carSound = loadsound("http://endreymarcell.hu/p5v2/sounds/car.wav")
 }
 ```
+Figyelem: a `playsound()` mellett a `loadsound()` a másik olyan függvény, aminek kivételesen nem "camelCase" módon, hanem csupa kisbetűvel írjuk a nevét.  
 
 Betöltés után a hangot a `playSound()` függvénnyel tudjuk elindítani, mely paraméterként a hangot tartalmazó változót várja:  
 ```
@@ -23,15 +26,17 @@ https://github.com/endreymarcell/p5-2017-spring/blob/master/08-misc/08-sounds-pi
 Illetve azért, hogy kevesebb idő menjen el a megfelelő képek kikeresésével, ezen az órán próbaképpen a képeket is a gyűjteményből lehet választani.
 
 __Feladatok:__  
-(1) Egészítsd ki a hatos óra egyes feladatát (Cookie Monster), hogy ne csak látszólag örüljön a keksznek a Cookie Monster, de hangot is adjon, mikor fölé viszed.  
-(2) Írj egy programot, amiben egy kosárlabda alakú sprite pattog a földön, és minden pattanásnál dobbanó hangot ad ki, mint egy igazi labda. A hang kiadását `if`-be kell majd tenned, a feltételnél vizsgáld azt, hogy a sprite alja érintkezik-e éppen másik sprite-tal (ehhez ld. a [kisokost](https://github.com/endreymarcell/p5-2017-spring/blob/master/p5-cheat-sheet.md)).  
+(1) Egészítsd ki a hatos óra egyes feladatát (Cookie Monster), hogy ne csak látszólag örüljön a keksznek a Cookie Monster, de hangot is adjon, mikor fölé viszed. Használhatod [ezt a bint](http://jsbin.com/movaxa/edit?js,output) alapként, vagy a saját korábbi megoldásodat is, de akkor ne felejtsd el a HTML fájlhoz hozzáadni ezt a sort:  
+`<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.8/addons/p5.sound.min.js"></script>`  
+(2) Írj egy programot, amiben egy kosárlabda alakú sprite pattog a földön, és minden pattanásnál dobbanó hangot ad ki, mint egy igazi labda. A hang kiadását `if`-be kell majd tenned, a feltételnél vizsgáld azt, hogy a sprite alja érintkezik-e éppen másik sprite-tal (`sprite.touching.bottom`, ld. a [kisokost](https://github.com/endreymarcell/p5-2017-spring/blob/master/p5-cheat-sheet.md)).  
 (3) Zenekar: írj egy programot, amiben három sprite van. Mindháromnak legyen hangszer-alakja, és bármelyikre kattintasz, az adjon ki a hangszerének megfelelő hangot.  
 (4\*) Írj egy programot, amiben egy célkereszt-alakú sprite mindig ott van, ahol az egér, maga a kurzor pedig el van rejtve. Ha kattintasz az egérrel, dördüljön el egy lövés. Írj bele azt is, hogy a program indulásakor egy űrhajó alakú sprite induljon el a vászon közepéről véletlenszerű irányba, és írd bele, hogy ha kattintáskor a célkereszt és az űrhajó fedésben vannak, akkor hallatsszon robbanás is, és az űrhajó tűnjön el.  
 (5\*) A `playSound()` függvényt valójában én írtam, az eredeti kicsit másképp néz ki. Írj egy programot, ami billentyűnyomásra hangot ad ki (kutyaugatás). Utána nyisd meg a [segédfüggvényeimet tartalmazó js fájlt](http://endreymarcell.hu/p5v2/marca-helpers.js), és próbáld meg kitalálni, mi volt az eredeti szintaxis a hangok lejátszására. Az én megoldásomba eleve bele van írva, hogy egy hang csak akkor induljon el, ha éppen nincs folyamatban (tehát hogy többször egyszerre ugyanaz a hang ne játszódhasson le, vagyis csak akkor kezdődhessen újra, ha már befejeződött). Írd át a programodat úgy, hogy az én `playSound()` függvényem helyett az eredeti alakot használod, és kihagyod belőle az újrajátszási feltételt - tehát többször is el lehet indítani a hangot párhuzamosan. Demonstráld az eredményt sok kutya ugatásával.  
 
 ## Mobil
 
-__Mobilos programokat wifiről ajánlott futtatni, különösen, ha nagy kép- és hangfájlokat tartalmaznak.__  
+__Megjegyzés:__ Mobilos programokat wifiről ajánlott futtatni, különösen, ha nagy kép- és hangfájlokat tartalmaznak.  
+__Megjegyzés:__ A mobilos programok megbízhatósága teljesen mobilfüggő.  
 
 ### Érintések
 
@@ -39,7 +44,7 @@ A p5-ös programok nem csak gépen tudnak futni, hanem mobilon is. Az érintők�
 
 | Egér             | Érintőképernyő    |
 |------------------|-------------------|
-| `mouseClicked()` | `touchStarted()`  |
+| `mouseClicked()` | `touchEnded()`  |
 | `mouseX`         | `touchX`          |
 | `mouseY`         | `touchY`          |
 | `mouseIsPressed` | `touchIsDown`     |
@@ -76,8 +81,8 @@ Megjegyzés: mobilon a `touchIsDown` nem mindig szokott szuperül működni, mer
 | `mouseWheel()`                           | (nincs)          | görgetünk az egérgörgővel (érintőképernyőn nincs megfelelője).                                  |
 
 __Feladatok:__  
-(6) Írj egy programot, ami egy véletlen méretű, véletlen színű, de mindig valamennyire átlátszó kört rajzol az érintés helyére! (Ne húzz vonalat, minden érintés csak egy kört hozzon létre.)  
-(7) Írj egy programot, ami érintéskor az érintés helyén létrehoz egy sprite-ot, és elindítja véletlenszerű irányba. Ha ez megvan, írd át úgy, hogy ne egy, hanem öt sprite szülessen (for ciklussal).  
+(6) Írj egy programot, ami egy véletlen méretű, véletlen színű, de mindig valamennyire átlátszó kört rajzol az érintés helyére! (Megjegyzés: ha érintésenként két kör jön létre, az valószínűleg nem a programod hibája, hanem a p5-é.)  
+(7) Írj egy programot, ami érintéskor az érintés helyén létrehoz egy sprite-ot, és elindítja véletlenszerű irányba. Ha ez megvan, írd át úgy, hogy ne egy, hanem öt sprite szülessen (for ciklussal). (Megjegyzés: ld. az előző feladat megjegyzését.)  
 (8\*) Írj egy programot, ami egy kicsi kört rajzol a képernyőre ott, ahol megérinted, de mindaddig, amíg el nem emeled az ujjad, a kör egyre nőjön. Csinálj magadnak egy változót a setupban, amiben a kör átmérőjét fogod tárolni, indítsd nulláról, és akkor is nullázd le, ha épp befejeződik egy érintés. A draw-ban kell rajzolni a kört az érintés helyére és növelni az átmérőt, de persze mindkettőt csak akkor, ha épp van érintés. Letörölni nem kell a draw-ban, maradjon meg minden kör a vásznon. Írd bele azt is, hogy minden új kör új random színnel legyen kitöltve.  
 
 ### További események
