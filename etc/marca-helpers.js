@@ -1,4 +1,29 @@
-corsProxy = "https://cors-anywhere.herokuapp.com/" // "https://crossorigin.me/" seems to be down
+// loading images and sounds
+
+corsProxy = "https://cors-anywhere.herokuapp.com/"
+
+function loadsound(url) {
+  return loadSound(corsProxy + url)
+}
+
+function loadimage(url) {
+  return loadImage(corsProxy + url)
+}
+
+
+// easier syntax for some p5 functions
+
+function circle(x, y, d) {
+  ellipse(x, y, d, d)
+}
+
+function square(x, y, a) {
+  rect(x, y, a, a)
+}
+
+function createGroup() {
+  return new Group()
+}
 
 function playSound(sound) {
   if (!sound.isPlaying()) {
@@ -10,23 +35,8 @@ function stopSound(sound) {
   sound.stop()
 }
 
-function loadsound(url) {
-  return loadSound(corsProxy + url)
-}
 
-function loadimage(url) {
-  return loadImage(corsProxy + url)
-}
-
-print = console.log
-
-function circle(x, y, d) {
-  ellipse(x, y, d, d)
-}
-
-function square(x, y, a) {
-  rect(x, y, a, a)
-}
+// helpers for cyclic movements
 
 function pulse(from, to, speed) {
   if (typeof speed === "undefined") {
@@ -60,6 +70,7 @@ function twoway(from, to, speed) {
   return from + direction * full
 }
 
-function createGroup() {
-  return new Group()
-}
+
+// make sure p5's `print` is not overwritten by the browser
+
+print = console.log
