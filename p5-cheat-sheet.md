@@ -68,7 +68,11 @@ A fenti változatban a `c` egy string, ami egy színt jelöl. RGB(A) színkód e
 
 `circle(x, y, d)` - rajzol egy kört, aminek az (x, y) pont lesz a középpontja és `d` az átmérője.  
 
+`ellipse(x, y, w, h)` - rajzol egy ellipszist, aminek az (x, y) pont lesz a középpontja, `w` a szélessége és `h` a magassága. (Ha `w` és `h` megegyezik, kört kapsz.)  
+
 `square(x, y, a)` - rajzol egy négyzetet, aminek az (x, y) pont lesz a bal felső sarka és `a` az oldalhosszúsága. Ha korábban kiadtuk a `rectMode("center")` utasítást, az (x, y) pont nem bal felső sarkot, hanem középpontot fog jelenteni.  
+
+`rect(x, y, w, h)` - rajzol egy téglalapot, aminek az (x, y) pont lesz a bal felső sarka, `w` a szélessége és `h` a magassága. (Ha `w` és `h` megegyezik, négyzetet kapsz.) Ha korábban kiadtuk a `rectMode("center")` utasítást, az (x, y) pont nem bal felső sarkot, hanem középpontot fog jelenteni.  
 
 `rectMode(m)` - beállítja, hogy az ez után rajzolt körök és téglalapok esetében az x és y koordináta a bal felső sarkot (`"corner"`) vagy a középpontot jelentse (`"center"`). Ez a függvény önmagában nem rajzol semmit.  
 
