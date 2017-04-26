@@ -237,7 +237,16 @@ Extraként beleírhatod, hogy a halak ne egyenletes sebességgel ússzanak, hane
 Írj egy programot éjszakai házakkal, pislákoló ablakokkal, átúszó felhőkkel, kutyaugatással, autókkal...
 (Ebben a programban kevés a sprite és sok a rajzolás.)  
 
-Rajzolj sötétkék háttérre épületeket sok kis ablakkal világító ablakkal (mindez mehet `fill()` és `rect()` megfelelő kombinációjával).  TODO finish
+Rajzolj sötétkék háttérre épületeket világító ablakkal. (Mindez mehet `fill()` és `rect()` megfelelő kombinációjával.) Az égen legyen hold (image), és ússzon át rajta felhő (sprite).  
+Extrák (válogass közülük tetszés szerint):  
+* A hold és a felhő legyenek félig átlátszóak (`tint()`).  
+* A felhő, ha átért a vászon egyik oldaláról a másikra, induljon el újra az egyikről (if-fel teszteld, hogy kiment-e a vászonról, és állítsd vissza az x koordinátáját).  
+* Időnként hallatsszon kutyaugatás. Az "időnként" részt úgy tudod megoldani, hogy a program indulásakor egy számlálót beállítasz egy nagy random számra (százas nagyságrend), a draw-ban mindig csökkented eggyel, és megnézed, elérte-e már a nullát. Ha elérte a nullát, játsszd le az ugatás-hangot (az előző órai gyűjteményben találsz hozzá hangfájlt), és állítsd a számlálót megint egy nagy véletlenszámra. (Ne felejtsd el, hogy a hangfájlok lejátszásához kelleni fog a p5.sound plugin importálása a HTML fájlban.)  
+* Az egyik ablakban időnként kapcsolódjon fel és le a villany. Ez hasonlít a kutyaugatáshoz annyiban, hogy egy számlálóval érdemes visszaszámolni, és nullánál váltani. Viszont mivel itt nem mindig ugyanazt kell csinálni, mint a kutyaugatásnál, hanem felváltva le- és felkapcsolni a lámpát, kelleni fog még egy változó, amiben számon tartod, hogy épp fel vagy le van kapcsolva. A draw függvényben ennek az ablaknak a megrajzolása függjön ettől a változótól (if). Továbbá ha a számláló elérte a nullát (if), nézd meg, mi éppen a lámpa állapota (még egy if az előzőn belül), és ha fel van kapcsolva, kapcsold le, ellenkező esetben kapcsold fel. (Segítség: hasonló programot írtunk már, csak nem számlálóval, hanem egérkattintással.)  
+* Időnként hajtson el egy autó a házak előtt. Ez is egy sprite, ami a felhőkhöz hasonlóan működik: ha átért a vásznon, vissza kell állítani az x koordinátáját. Hogy legyen némi idő az autó elhajtásai között, és ne folyamatosan hajtson át újra meg újra a vásznon, állítsd az x koordinátáját bőven a vásznon kívülre, hogy sokáig tartson, míg újra beér.  
+* Ha a holdat és a felhőket korábban `tint()`-tel átlátszóvá tetted, akkor most az autó is átlátszó lesz - oldd meg, hogy ez ne legyen így. Ehhez csinálj egy csoportot, tedd bele az autó-sprite-ot, az összes sprite-ot megrajzoló parancs után add ki újra a `tint()` parancsot átlátszóság nélkül, és hívd meg a rajzolást az autós csoportra is.  
+* Mikor az autó áthajt a vásznon, játssz le autóhangot.  
+
 
 ### Csápolás
 Írj egy programot, ami látványos, színes Bezier-görbéket rajzol. 
