@@ -234,7 +234,7 @@ Extraként beleírhatod, hogy a halak ne egyenletes sebességgel ússzanak, hane
 
 ### Az éjszaka csodái
 
-Írj egy programot éjszakai házakkal, pislákoló ablakokkal, átúszó felhőkkel, kutyaugatással, autókkal...
+Írj egy programot éjszakai házakkal, pislákoló ablakokkal, átúszó felhőkkel, kutyaugatással, autókkal...  
 (Ebben a programban kevés a sprite és sok a rajzolás.)  
 
 Rajzolj sötétkék háttérre épületeket világító ablakkal. (Mindez mehet `fill()` és `rect()` megfelelő kombinációjával.) Az égen legyen hold (image), és ússzon át rajta felhő (sprite).  
@@ -249,7 +249,7 @@ Extrák (válogass közülük tetszés szerint):
 
 
 ### Csápolás
-Írj egy programot, ami látványos, színes Bezier-görbéket rajzol. 
+Írj egy programot, ami látványos, színes Bezier-görbéket rajzol.  
 (Ebben a programban sok a sprite és kevés a rajzolás.)  
 
 Hozz létre négy sprite-ot random helyen. Rajzolj rájuk egy Bezier-görbét a `bezier()` függvénnyel, ami nyolc számot vár: konkrétan négy pont koordinátáit. Ebből már láthatod, hogy fog működni a program.  
