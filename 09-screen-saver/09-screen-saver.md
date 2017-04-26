@@ -142,7 +142,7 @@ Az `if` feltételeivel kapcsolatban két probléma szokott felmerülni. Ebből a
 A szimpla egyenlőségjel _értékadásra_ használatos: egy változóba belerakunk egy értéket (a bob-ba a sprite-ot, a bob.position.x-be a 100-at, a bob.immovable-be a true-t).  
 A dupla egyenlőségjel _számok és stringek vizsgálatára_ használatos: megkérdezzük, hogy a változó értéke éppen megegyezik-e valami mással (a bob.position.x a 100-zal, a lamp az "off"-fal).  
 A különbség létfontosságú. A lényeg: __if-en belül mindig dupla egyenlőségjelet használunk, sosem szimplát.__  
-Ha mégis elgépeltük volna a programot, a JSBin egy nagy piros x-szel hívja fel a figyelmet a hibánkra. Hibaüzenetet is ad: "Expected a conditional expressen and instead saw an assignment." Magyarul: feltételes kifejezést (összehasonlítást) vártam, és helyette egy értékadást kaptam.  
+Ha mégis elgépeltük volna a programot, a JSBin egy nagy piros x-szel hívja fel a figyelmet a hibánkra. Hibaüzenetet is ad: "Expected a conditional expression and instead saw an assignment." Magyarul: feltételes kifejezést (összehasonlítást) vártam, és helyette egy értékadást kaptam.  
 Megjegyzés: ha mégis benne hagyjuk a szimpla egyenlőségjelet a feltételben, a program le fog futni (és a konzolon sem látunk majd hibaüzenetet), de nem úgy fog viselkedeni, ahogy szeretnénk.  
 
 #### if (bob.touching.bottom) { ... }
