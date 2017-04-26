@@ -130,7 +130,8 @@ A `mouseClicked()` egy külön függvény a `setup()` és a `draw()` után. A be
 #### if vagy nem if
 
 A `mouseIsPressed` változó vizsgálata a draw-ban történik. A draw mindig újra meg újra lefut, egérgombtól függetlenül. Ezért kell az egérgomb lenyomásához kapcsolódó parancsainkat `if`-be tenni: hogy csak akkor történjenek meg, ha az egérgomb le van nyomva.  
-A `mouseClicked()` viszont eleve csak akkor fut le, ha megnyomjuk az egeret. Tehát ebben a függvényben már nem kell megvizsgálnunk, hogy le van-e nyomva az egérgomb: persze, hogy le van, hiszen különben meg sem hívódott volna a függvény. Egyszóval: `mouseClicked()`-en belül már __nem írunk__ `if (mouseIsPressed)` feltételt.  
+A `mouseClicked()` viszont eleve csak akkor fut le, ha megnyomjuk az egeret, tehát ebben a függvényben már nem kell megvizsgálnunk, hogy le van-e nyomva az egérgomb. (Ha mégis megpróbáljuk, akkor még csak működni sem fog a programunk, mivel a `mouseClicked()` - a `mouseReleased()` aliasaként - pontosan az egérgomb _felengedésekor_ fut le, tehát mire a program futása az `if`-hez ér, addigra már pont nincs lenyomva az egérgomb.)  
+Egyszóval: `mouseClicked()`-en belül már __nem írunk__ `if (mouseIsPressed)` feltételt.  
 
 ### 3. if
 
