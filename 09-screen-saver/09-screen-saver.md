@@ -1,5 +1,8 @@
 # Kilencedik: saját képernyőkímélő
 
+## Visszajelzés a félévről  
+https://goo.gl/forms/oc8y9pZ6hOG5Nwoj2  
+
 ## Öt okosság
 https://prezi.com/view/J9TvUrBKaHyxsHr28sBE/  
 
