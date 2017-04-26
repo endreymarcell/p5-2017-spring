@@ -13,13 +13,13 @@ A félév során írt programokban a `background()` függvényt látszólag önk
 #### background a setup-ban
 ```
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	fill("black")
-	background("white")
+    createCanvas(windowWidth, windowHeight)
+    fill("black")
+    background("white")
 }
 
 function draw() {
-	circle(mouseX, mouseY, 100)
+    circle(mouseX, mouseY, 100)
 }
 ```
 Eredmény: a vásznat csak egyetlenegyszer, a program elején festjük fehérre, utána pedig folyamatosan fekete köröket rajzolunk rá. Tehát az összes kör megmarad, és az egér "csíkot húz" maga után.  
@@ -27,13 +27,13 @@ Eredmény: a vásznat csak egyetlenegyszer, a program elején festjük fehérre,
 #### background a draw-ban
 ```
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	fill("black")
+    createCanvas(windowWidth, windowHeight)
+    fill("black")
 }
 
 function draw() {
-	background("white")
-	circle(mouseX, mouseY, 100)
+    background("white")
+    circle(mouseX, mouseY, 100)
 }
 ```
 Eredmény: a vásznat minden kör megrajzolása előtt fehérre festjük, tehát mindig letöröljük a korábbi kört, és csak az aktuális fog látszani. Az egér nem húz csíkot maga után.  
@@ -41,13 +41,13 @@ Eredmény: a vásznat minden kör megrajzolása előtt fehérre festjük, tehát
 #### background hibásan a draw-ban
 ```
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	fill("black")
+    createCanvas(windowWidth, windowHeight)
+    fill("black")
 }
 
 function draw() {
-	circle(mouseX, mouseY, 100)
-	background("white")
+    circle(mouseX, mouseY, 100)
+    background("white")
 }
 ```
 Eredmény: a vásznat minden kör megrajzolása _után_ azonnal fehérre festjük, tehát végeredményben nem fogunk látni egy kört sem.  
@@ -55,16 +55,16 @@ Eredmény: a vásznat minden kör megrajzolása _után_ azonnal fehérre festjü
 #### background tévedésből a draw-ban, circle a mouseClicked-ben
 ```
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	fill("black")
+    createCanvas(windowWidth, windowHeight)
+    fill("black")
 }
 
 function draw() {
-	background("white")
+    background("white")
 }
 
 function mouseClicked() {
-	circle(mouseX, mouseY, 100)
+    circle(mouseX, mouseY, 100)
 }
 ```
 Eredmény: az előző esethez hasonlóan nem látunk semmit, mert a köröket megrajzolás után azonnal le is festjük fehérre.  
@@ -72,16 +72,16 @@ Eredmény: az előző esethez hasonlóan nem látunk semmit, mert a köröket me
 #### background a setupban, circle a mouseClicked-ben
 ```
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	fill("black")
-	background("white")
+    createCanvas(windowWidth, windowHeight)
+    fill("black")
+    background("white")
 }
 
 function draw() {
 }
 
 function mouseClicked() {
-	circle(mouseX, mouseY, 100)
+    circle(mouseX, mouseY, 100)
 }
 ```
 Eredmény: a kattintások helyén megjelenik egy-egy kör.  
@@ -89,13 +89,13 @@ Eredmény: a kattintások helyén megjelenik egy-egy kör.
 #### Csillagos: halványító background a draw-ban
 ```
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	fill("black")
+    createCanvas(windowWidth, windowHeight)
+    fill("black")
 }
 
 function draw() {
-	background(255, 255, 255, 50)
-	circle(mouseX, mouseY, 100)
+    background(255, 255, 255, 50)
+    circle(mouseX, mouseY, 100)
 }
 ```
 Eredmény: a vásznat minden kör előtt fehérre festjük, de a fehér szín RGB kódja (255, 255, 255) után megadunk egy átlászóságot is (50). Így a fehér "festék" nem fogja teljesen elfedni a korábbi köröket, csak elhalványítani. Az egér egyre halványuló csíkot fog maga után húzni.  
@@ -103,14 +103,14 @@ Eredmény: a vásznat minden kör előtt fehérre festjük, de a fehér szín RG
 #### Csillagos: egyenletesen halvány background a draw-ban
 ```
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	fill("black")
+    createCanvas(windowWidth, windowHeight)
+    fill("black")
 }
 
 function draw() {
-	background(255, 255, 255)
-	circle(mouseX, mouseY, 100)
-	background(255, 255, 255, 50)
+    background(255, 255, 255)
+    circle(mouseX, mouseY, 100)
+    background(255, 255, 255, 50)
 }
 ```
 Eredmény: a vásznat minden kör előtt teljesen fehérre (255, 255, 255) festjük, ezzel mindent kitörölve. Megrajzoljuk a fekete kört, majd ennek a tetejére festünk megint fehérrel, de csak egy félig átlászó fehérrel. Így a kör nem fog még halványuló csíkot sem húzni maga után, hiszen a vásznat minden kör elején töröljük, viszont végeredményben a kör mégis kicsit halványan fog megjelenni, mert mindig ráfestünk egy félig átlátszó fehérrel.  
@@ -178,14 +178,14 @@ Ha számok helyett egy listát (tömböt) adunk át a randomnak, akkor visszaadj
 Használhatjuk például arra, hogy véletlenszerűen adjunk alakot egy sprite-nak több betöltött kép közül:  
 ```
 function preload() {
-	catImg = loadimage(...)
-	dogImg = loadimage(...)
+    catImg = loadimage(...)
+    dogImg = loadimage(...)
 }
 
 function setup() {
-	createCanvas(windowWidth, windowHeight)
-	animal = createSprite()
-	animal.addImage([catImg, dogImg])
+    createCanvas(windowWidth, windowHeight)
+    animal = createSprite()
+    animal.addImage([catImg, dogImg])
 }
 ```
 Ebben a programban az `animal` nevű sprite-nak 50% valószínűséggel kutya, 50%-kal macska alakja lesz.  
