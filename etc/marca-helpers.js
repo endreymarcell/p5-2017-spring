@@ -36,6 +36,24 @@ function stopSound(sound) {
 }
 
 
+// general helper functions
+
+function roundTo(num, to) {
+    return to * round(num / to)
+}
+
+function shift(group) {
+    if (group.length < 1) {
+        return
+    }
+    last = group[group.length - 1]
+    for (i = group.length - 1; i > 0; i -= 1) {
+        group[i] = group[i - 1]
+    }
+    group[0] = last
+}
+
+
 // helpers for cyclic movements
 
 function pulse(from, to, speed) {
