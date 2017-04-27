@@ -108,7 +108,7 @@ A fenti változatban a `c` egy string, ami egy színt jelöl. RGB(A) színkód e
 
 `print(s)` - kiírja `s` szöveget a konzolra.  
 
-`noLooop()` - leállítja a `draw()` függvény folyamatos meghívását.  
+`noLoop()` - leállítja a `draw()` függvény folyamatos meghívását.  
 
 `loop()` - újraindítja a `draw()` függvény folyamatos meghívását.  
 
