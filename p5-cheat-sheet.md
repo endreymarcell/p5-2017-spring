@@ -11,11 +11,22 @@ A program indulásakor egyszer fut le. Ebbe tesszük azokat a parancsokat, beál
 `draw() { ... }`  
 A program indulása után folyamatosan újra és újra lefut, másodpercenként akár harmincszor. Változáshoz, interakcióhoz kapcsolódó logikát írunk bele.  
 
-`mouseClicked() { ... }`  
-Akkor fut le, ha kattintunk az egérrel (az egérkattintás hosszától függetlenül mindig csak egyszer).  
+`mousePressed() { ... }`  
+Akkor fut le, ha kattintunk az egérrel (az egérkattintás hosszától függetlenül mindig csak egyszer, közvetlenül az egérgomb lenyomása után).  
 
-`keyPressed() { ... }`  
-Akkor fut le, ha lenyomunk egy billentyűz (a lenyomás hosszától függetlenül mindig csak egyszer).  
+`mouseReleased() { ... }` vagy `mouseClicked() { ... }`  
+Akkor fut le, ha kattintunk az egérrel (az egérkattintás hosszától függetlenül mindig csak egyszer, közvetlenül az egérgomb felengedése után).  
+`mouseMoved() { ... }`  
+Akkor fut le, ha felengedett egérgomb mellett mozgatjuk az egeret.  
+
+`mouseDragged() { ... }`  
+Akkor fut le, ha lenyomott egérgomb mellett mozgatjuk az egeret.  
+
+`keyPressed() { ... }`  vagy `keyTyped() { ... }`  
+Akkor fut le, ha lenyomunk egy billentyűt (a lenyomás hosszától függetlenül mindig csak egyszer, közvetlenül a billentyű lenyomása után).  
+
+`keyReleased() { ... }`  
+Akkor fut le, ha lenyomunk egy billentyűt (a lenyomás hosszától függetlenül mindig csak egyszer, közvetlenül a billentyű felengedése után).  
 
 ## read-only p5 változók
 
