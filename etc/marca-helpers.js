@@ -53,6 +53,12 @@ function shift(group) {
     group[0] = last
 }
 
+function repulsionPoint(sprite, magnitude, pointX, pointY) {
+    var angle = atan2(pointY - sprite.position.y, pointX - sprite.position.x)
+    sprite.velocity.x -= cos(angle) * magnitude
+    sprite.velocity.y -= sin(angle) * magnitude
+}
+
 
 // helpers for cyclic movements
 
