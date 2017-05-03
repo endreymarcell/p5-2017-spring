@@ -1,5 +1,37 @@
 # Tizedik óra: saját játék
 
+Visszajelzés: https://goo.gl/forms/oc8y9pZ6hOG5Nwoj2
+
+## Hogyan tovább?
+
+### Processing, p5, p5.play
+
+[Processing tutorialok](https://processing.org/tutorials/)  
+[p5.js tutorialok](https://p5js.org/tutorials/)  
+[p5.play](http://p5play.molleindustria.org/)  
+
+[openprocessing.org/](https://www.openprocessing.org/) - sok p5-ös / Processinges program forráskóddal együtt. Regisztráció után írhatsz ide sajátot is, amihez képeket és hangokat is fel tudsz ide tölteni, nem kell az internetről linkelni.  
+[Daniel Shiffman p5.js oktatói videói](https://www.youtube.com/user/shiffman/playlists?sort=dd&view=50&shelf_id=14)  
+
+### JavaScript, webfejlesztés
+
+[w3schools.com/js](https://www.w3schools.com/js/default.asp) - JavaScript tutorial  
+[w3schools.com/html](https://www.w3schools.com/html/default.asp) - HTML tutorial  
+[w3schools.com/css](https://www.w3schools.com/css/default.asp) - CSS tutorial  
+
+[HTML és CSS tutorial videó](https://www.youtube.com/playlist?list=PLzmyR17f55-J7oZew4QxQ7cfw7d3__ZZs)  
+[HTML és CSS interaktív tutorial](https://www.codecademy.com/learn/learn-html-css)  
+
+## Python
+
+[Processing.py](http://py.processing.org/tutorials/) - Processing Python nyelven  
+[Learn Python the Hard Way](https://learnpythonthehardway.org/book) - egy nagyon jó könyv a Python nyelvről  
+[Ingyenes Udamy kurzusok](https://www.udemy.com/courses/search/?q=python&src=ukw&lang=en&price=price-free)  
+[EdX MIT kurzus](https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-10)  
+[Pylvax](https://www.facebook.com/groups/pylvax/) - Python programozói közösség  
+
+## Játékok
+
 ### Angry birds
 Minimálos angry birds.  
 (Ez a program indokolatlanul bonyolult és idegesítő, úgyhogy mindenkinek ajánlom.)  
