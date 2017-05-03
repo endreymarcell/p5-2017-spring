@@ -10,7 +10,7 @@ Visszajelzés: https://goo.gl/forms/oc8y9pZ6hOG5Nwoj2
 [p5.js tutorialok](https://p5js.org/tutorials/)  
 [p5.play](http://p5play.molleindustria.org/)  
 
-[openprocessing.org/](https://www.openprocessing.org/) - sok p5-ös / Processinges program forráskóddal együtt. Regisztráció után írhatsz ide sajátot is, amihez képeket és hangokat is fel tudsz ide tölteni, nem kell az internetről linkelni.  
+[openprocessing.org](https://www.openprocessing.org/) - sok p5-ös / Processinges program forráskóddal együtt. Regisztráció után írhatsz ide sajátot is, amihez képeket és hangokat is fel tudsz ide tölteni, nem kell az internetről linkelni.  
 [Daniel Shiffman p5.js oktatói videói](https://www.youtube.com/user/shiffman/playlists?sort=dd&view=50&shelf_id=14)  
 
 ### JavaScript, webfejlesztés
