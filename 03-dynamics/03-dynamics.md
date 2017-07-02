@@ -24,6 +24,7 @@ A kódszerkesztőben lehetőség van a kód úgynevezett "kikommentelésére". E
 Egy sor kommentként való megjelöléséhez írjunk az elejére dupla perjelet (//). A kódszerkesztő színezéssel is jelzi, hogy a sorunk innentől nem lesz végrehajtva.  
 
 A szerkesztő továbbá automatikusan szépre tudja formázni a kódunkat. Ez egy igen hasznos funkció, használjuk sűrűn! Az automatikus formázást a `Cmd + Shift + L` billentyűkombináció futtatja le (windowson `Ctrl + Shift + L`).  
+(Megjegyzés: Safariban sajnos nem működik.)  
 
 Megjegyzés: a kurzus weboldalán egy [táblázatban összefoglaltam](https://github.com/endreymarcell/p5-2017-spring#speciális-karakterek) a programozásban gyakran használatos speciális karaktereket, illetve hogy hol találjuk őket Apple billentyűzeteken.  
 
